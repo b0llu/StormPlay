@@ -25,7 +25,11 @@ export const CategoryContainer = () => {
         {categories.map((category) => {
           return (
             <div key={category._id} className="category-box">
-              <img className="rsp-img" src={category.categoryImage} alt="" />
+              <img
+                className="rsp-img"
+                src={category.categoryImage}
+                alt={category.alt}
+              />
               <div className="for-opacity"></div>
               <h2 className="category-text">{category.categoryName}</h2>
             </div>
