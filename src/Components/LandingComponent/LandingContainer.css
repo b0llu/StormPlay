@@ -17,7 +17,7 @@
 .landing-container-auth {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 200px repeat(4, 1fr) 200px;
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(1, max-content) repeat(3, 1fr) repeat(
       1,
       max-content
