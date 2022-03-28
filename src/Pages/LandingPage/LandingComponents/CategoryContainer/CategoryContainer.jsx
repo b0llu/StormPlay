@@ -40,6 +40,7 @@ export const CategoryContainer = () => {
         Check out our Ecom site below to buy any PC part that you wish for!
       </span>
       <a
+        target="_blank"
         href="https://stormpoint-shop.netlify.app/"
         className="text-btn expert-btn"
       >
