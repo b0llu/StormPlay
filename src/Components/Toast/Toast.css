@@ -1,0 +1,35 @@
+.toast-success {
+    position: fixed;
+    z-index: 5;
+    right: 5px;
+    top: 10rem;
+    font-size: 2rem;
+    background-color: var(--success-color);
+    color: #000;
+    padding: 1rem;
+}
+
+.toast-error {
+    position: fixed;
+    z-index: 5;
+    right: 5px;
+    top: 10rem;
+    font-size: 2rem;
+    background-color: var(--alert-color);
+    color: #000;
+    padding: 1rem;
+}
+
+.close {
+    transform: translateX(150%);
+}
+
+.open {
+    transform: translateX(0);
+}
+
+@media screen and (max-width: 850px) {
+    .toast-success {
+        top: 18rem;
+    }
+}
