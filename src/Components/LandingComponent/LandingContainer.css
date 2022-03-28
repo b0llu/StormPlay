@@ -1,0 +1,73 @@
+.landing-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 70px repeat(5, 1fr);
+  grid-template-rows: repeat(1, max-content) repeat(3, 1fr) repeat(
+      1,
+      max-content
+    );
+  grid-template-areas:
+    "nav nav nav nav nav nav"
+    "sidebar contentarea contentarea contentarea contentarea contentarea"
+    "sidebar contentarea contentarea contentarea contentarea contentarea"
+    "sidebar contentarea contentarea contentarea contentarea contentarea"
+    "footerarea footerarea footerarea footerarea footerarea footerarea";
+}
+
+.landing-container-auth {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, max-content) repeat(3, 1fr) repeat(
+      1,
+      max-content
+    );
+  grid-template-areas:
+    "nav nav nav nav nav nav"
+    "contentarea contentarea contentarea contentarea contentarea contentarea"
+    "contentarea contentarea contentarea contentarea contentarea contentarea"
+    "contentarea contentarea contentarea contentarea contentarea contentarea"
+    "footerarea footerarea footerarea footerarea footerarea footerarea";
+}
+
+nav {
+  grid-area: nav;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+section {
+  grid-area: contentarea;
+}
+
+footer {
+  grid-area: footerarea;
+  margin-top: auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 850px) {
+  .landing-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, max-content) repeat(2, 1fr) repeat(
+      1,
+      max-content
+    );
+    grid-template-areas:
+      "nav nav nav"
+      "sidebar sidebar sidebar"
+      "contentarea contentarea contentarea"
+      "contentarea contentarea contentarea"
+      "footerarea footerarea footerarea";
+  }
+}
