@@ -1,37 +1,32 @@
 .landing-container {
-  min-height: 100vh;
   display: grid;
+  min-height: 100vh;
   grid-template-columns: 70px repeat(5, 1fr);
-  grid-template-rows: repeat(1, max-content) repeat(3, 1fr) repeat(
-      1,
-      max-content
-    );
+  grid-template-rows: repeat(1, max-content) repeat(3, 1fr);
   grid-template-areas:
     "nav nav nav nav nav nav"
     "sidebar contentarea contentarea contentarea contentarea contentarea"
     "sidebar contentarea contentarea contentarea contentarea contentarea"
-    "sidebar contentarea contentarea contentarea contentarea contentarea"
-    "footerarea footerarea footerarea footerarea footerarea footerarea";
+    "sidebar contentarea contentarea contentarea contentarea contentarea";
 }
 
 .landing-container-auth {
   min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(1, max-content) repeat(3, 1fr) repeat(
-      1,
-      max-content
-    );
+  grid-template-rows: repeat(1, max-content) repeat(3, 1fr);
   grid-template-areas:
     "nav nav nav nav nav nav"
     "contentarea contentarea contentarea contentarea contentarea contentarea"
     "contentarea contentarea contentarea contentarea contentarea contentarea"
-    "contentarea contentarea contentarea contentarea contentarea contentarea"
-    "footerarea footerarea footerarea footerarea footerarea footerarea";
+    "contentarea contentarea contentarea contentarea contentarea contentarea";
 }
 
 nav {
   grid-area: nav;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 aside {
@@ -40,11 +35,6 @@ aside {
 
 section {
   grid-area: contentarea;
-}
-
-footer {
-  grid-area: footerarea;
-  margin-top: auto;
 }
 
 ::-webkit-scrollbar {
@@ -59,15 +49,14 @@ footer {
 @media screen and (max-width: 850px) {
   .landing-container {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, max-content) repeat(2, 1fr) repeat(
-      1,
-      max-content
-    );
+    grid-template-rows: repeat(1, max-content) repeat(2, 1fr) repeat(
+        1,
+        max-content
+      );
     grid-template-areas:
       "nav nav nav"
-      "sidebar sidebar sidebar"
       "contentarea contentarea contentarea"
       "contentarea contentarea contentarea"
-      "footerarea footerarea footerarea";
+      "sidebar sidebar sidebar";
   }
 }
