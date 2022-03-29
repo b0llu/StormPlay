@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Loader } from "../../../../Components";
 import { useReducerContext } from "../../../../Context/Reducer.context";
 import "./CategoryContainer.css";
@@ -8,6 +9,7 @@ export const CategoryContainer = () => {
   const { loading, dispatch } = useReducerContext();
   const [categories, setCategories] = useState([]);
   const [mostViewed, setMostViewed] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch({ type: "LOADING" }),
@@ -46,7 +48,11 @@ export const CategoryContainer = () => {
         <div className="category-section">
           {categories.map((category) => {
             return (
-              <div key={category._id} className="category-box">
+              <div
+                key={category._id}
+                onClick={() => navigate(`/videos?category=${category.value}`)}
+                className="category-box"
+              >
                 <img
                   className="rsp-img"
                   src={category.categoryImage}

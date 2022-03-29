@@ -1,4 +1,5 @@
 import "./LandingHeroContainer.css";
+import { Link } from "react-router-dom";
 
 export const LandingHeroContainer = () => {
   return (
@@ -10,10 +11,12 @@ export const LandingHeroContainer = () => {
       />
       <div className="text-container">
         <span className="text-header">
-          Welcome to a <span className="highlight">ONE STOP</span> site to clear all your doubts about
-          PC Building!
+          Welcome to a <span className="highlight">ONE STOP</span> site to clear
+          all your doubts about PC Building!
         </span>
-        <button className="text-btn">Explore More</button>
+        <Link to="/videos">
+          <button className="text-btn">Explore More</button>
+        </Link>
       </div>
     </div>
   );

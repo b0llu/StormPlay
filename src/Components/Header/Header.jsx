@@ -1,16 +1,17 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <nav>
       <div className="navbar">
-        <h1 className="name">
+        <Link className="name" to="/">
           <i className="fas fa-bolt"></i> StormPlay
-        </h1>
+        </Link>
         <input className="header-input" placeholder="Search" type="text" />
         <div className="margin-left-auto">
           <div className="icon-container">
-            <p className="icon-color">username</p>
+            {/* <p className="icon-color">username</p> */}
             <div className="badge">
               <i className="fa-solid fas fa-user icon-color"></i>
             </div>

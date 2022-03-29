@@ -224,7 +224,7 @@ export const videos = [
       "Squeeze out more performance from your computer by overclocking your CPU. Follow these steps to learn how.",
     creator: "Tech Insider",
     creatorThumbnail:
-      "https://yt3.ggpht.com/ytc/AKedOLQ4vDYJPSfoa_xa6tq-Emre64WNJA05P02o9Q5gjw=s48-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/ytc/AKedOLQnfFBfrFrfDbvgnT3AWzL3PGO046ZBvUi8Id2H=s48-c-k-c0x00ffffff-no-rj",
     category: "overclock",
     views: "108,529 views",
     publishDate: "Jul 20, 2021",
@@ -256,7 +256,7 @@ export const videos = [
       "The UNIVERSAL Guide to Overclocking your GPU in 2021. Fast, Free and SIMPLE! This will maximize performance on GTX / RTX or RX gpus",
     creator: "Zac",
     creatorThumbnail:
-      "https://yt3.ggpht.com/ytc/AKedOLRjW77DzAQyGuXfC6Rgd2gh1zfckc5uJzKT_-fK=s48-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/ytc/AKedOLQnfFBfrFrfDbvgnT3AWzL3PGO046ZBvUi8Id2H=s48-c-k-c0x00ffffff-no-rj",
     category: "overclock",
     views: "790,785 views",
     publishDate: "Jan 18, 2021",
