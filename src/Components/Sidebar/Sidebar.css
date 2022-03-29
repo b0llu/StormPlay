@@ -50,3 +50,28 @@
 .active {
   color: var(--primary-color);
 }
+
+@media screen and (max-width: 850px) {
+  .sidebar-container {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    flex-direction: row;
+    height: max-content;
+    z-index: 5;
+    justify-content: center;
+  }
+
+  .top-sidebar {
+    flex-direction: row;
+  }
+
+  .bottom-sidebar {
+    display: none;
+  }
+
+  .top-sidebar span {
+    margin: 1rem;
+  }
+}

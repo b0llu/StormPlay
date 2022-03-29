@@ -20,6 +20,7 @@ export const videos = [
     views: "1,277,942 views",
     publishDate: "Feb 27, 2020",
     subscribers: "501K subscribers",
+    trending: true,
   },
   {
     _id: "-8LMML_EiMg",
@@ -36,6 +37,7 @@ export const videos = [
     views: "3,084,284 views",
     publishDate: "Jan 23, 2021",
     subscribers: "3.64M subscribers",
+    trending: false,
   },
   {
     _id: "UdsaTRBZePw",
@@ -53,6 +55,7 @@ export const videos = [
     views: "2,662,643 views",
     publishDate: "Dec 16, 2020",
     subscribers: "3.64M subscribers",
+    trending: false,
   },
   {
     _id: "NYcZmwnWkdI",
@@ -69,6 +72,7 @@ export const videos = [
     views: "26,152 views",
     publishDate: "Jan 11, 2021",
     subscribers: "54.9K subscribers",
+    trending: false,
   },
   {
     _id: "PXaLc9AYIcg",
@@ -85,6 +89,7 @@ export const videos = [
     views: "7,537,846 views",
     publishDate: "Apr 9, 2021",
     subscribers: "3.35M subscribers",
+    trending: true,
   },
   {
     _id: "OZaFqY8UF6I",
@@ -101,6 +106,7 @@ export const videos = [
     views: "8,255,452 views",
     publishDate: "Dec 23, 2017",
     subscribers: "3.35M subscribers",
+    trending: true,
   },
   {
     _id: "uXIF32hhT8I",
@@ -117,6 +123,7 @@ export const videos = [
     views: "16,501 views",
     publishDate: "Dec 12, 2020",
     subscribers: "9.24K subscribers",
+    trending: false,
   },
   {
     _id: "7DVOQrs1N40",
@@ -133,6 +140,7 @@ export const videos = [
     views: "389,252 views",
     publishDate: "Mar 5, 2021",
     subscribers: "16.5M subscribers",
+    trending: true,
   },
   {
     _id: "ExxFxD4OSZ0",
@@ -149,6 +157,7 @@ export const videos = [
     views: "3,528,933 views",
     publishDate: "Jan 18, 2018",
     subscribers: "161K subscribers",
+    trending: false,
   },
   {
     _id: "FsHHxKq98gs",
@@ -165,6 +174,7 @@ export const videos = [
     views: "282,037 views",
     publishDate: "Oct 9, 2020",
     subscribers: "313K subscribers",
+    trending: true,
   },
   {
     _id: "1DRiFMgxVNc",
@@ -181,6 +191,7 @@ export const videos = [
     views: "1,124,179 views",
     publishDate: "Jan 31, 2018",
     subscribers: "22M subscribers",
+    trending: false,
   },
   {
     _id: "WXpZD5uYfOo",
@@ -197,6 +208,7 @@ export const videos = [
     views: "884,820 views",
     publishDate: "Apr 20, 2017",
     subscribers: "2.81M subscribers",
+    trending: false,
   },
   {
     _id: "IbuKffs7wmg",
@@ -213,6 +225,7 @@ export const videos = [
     views: "4,188,806 views",
     publishDate: "Jun 6, 2020",
     subscribers: "2.81M subscribers",
+    trending: true,
   },
   {
     _id: "dJMDB3PjBw8",
@@ -229,6 +242,7 @@ export const videos = [
     views: "108,529 views",
     publishDate: "Jul 20, 2021",
     subscribers: "3.77M subscribers",
+    trending: true,
   },
   {
     _id: "yyv9Y2miV64",
@@ -245,6 +259,7 @@ export const videos = [
     views: "1,475,107 views",
     publishDate: "Sep 9, 2019",
     subscribers: "4.05M subscribers",
+    trending: false,
   },
   {
     _id: "wEhlKK5qKXo",
@@ -261,6 +276,7 @@ export const videos = [
     views: "790,785 views",
     publishDate: "Jan 18, 2021",
     subscribers: "14.6K subscribers",
+    trending: true,
   },
   {
     _id: "PnImWoRQHpk",
@@ -276,6 +292,7 @@ export const videos = [
     views: "18,892 views",
     publishDate: "Sep 14, 2021",
     subscribers: "31.7K subscribers",
+    trending: false,
   },
   {
     _id: "vjbNhCHwlBo",
@@ -292,6 +309,7 @@ export const videos = [
     views: "1,584,931 views",
     publishDate: "Apr 16, 2020",
     subscribers: "3.64M subscribers",
+    trending: true,
   },
   {
     _id: "bkfja-7UMb0",
@@ -308,6 +326,7 @@ export const videos = [
     views: "188,002 views",
     publishDate: "Dec 16, 2020",
     subscribers: "2.81M subscribers",
+    trending: false,
   },
   {
     _id: "nepL38tba-I",
@@ -324,5 +343,6 @@ export const videos = [
     views: "435,404 views",
     publishDate: "Jan 11, 2022",
     subscribers: "7.01M subscribers",
+    trending: false,
   },
 ];

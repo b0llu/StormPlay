@@ -101,21 +101,22 @@ export const CategoryContainer = () => {
             })}
         </div>
       )}
-
-      <span className="category-header">Already a Expert?</span>
-      <span className="expert-text">
-        If PC Building is a child's play for you why not do it right now!
-      </span>
-      <span className="expert-text">
-        Check out our Ecom site below to buy any PC part that you wish for!
-      </span>
-      <a
-        target="_blank"
-        href="https://stormpoint-shop.netlify.app/"
-        className="text-btn expert-btn"
-      >
-        <i className="fas fa-bolt"></i>StormPoint
-      </a>
+      <div className="expert-box">
+        <span className="expert-header">Already a Expert?</span>
+        <span className="expert-text">
+          If PC Building is a child's play for you why not do it right now!
+        </span>
+        <span className="expert-text">
+          Check out our Ecom site below to buy any PC part that you wish for!
+        </span>
+        <a
+          target="_blank"
+          href="https://stormpoint-shop.netlify.app/"
+          className="text-btn expert-btn"
+        >
+          <i className="fas fa-bolt"></i>StormPoint
+        </a>
+      </div>
     </div>
   );
 };

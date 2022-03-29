@@ -24,7 +24,7 @@ li {
 }
 
 .categories li {
-  margin: 0 2rem;
+  margin: 5px 1rem;
   color: var(--white);
   font-weight: 500;
   background-color: var(--border-clr);

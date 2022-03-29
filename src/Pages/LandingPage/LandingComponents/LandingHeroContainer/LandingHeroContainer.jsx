@@ -6,7 +6,7 @@ export const LandingHeroContainer = () => {
     <div className="hero-container">
       <img
         className="hero-img"
-        src="https://i.ytimg.com/vi/dBk2_yB2TUU/maxresdefault.jpg"
+        src="https://cdn.discordapp.com/attachments/470238446514995222/952524810385227786/hero-img.png"
         alt="Hero-Img"
       />
       <div className="text-container">
