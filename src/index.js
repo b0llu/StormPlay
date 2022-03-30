@@ -4,6 +4,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import { ReducerProvider } from "./Context/Reducer.context";
+import { ThemeProvider } from "./Context/Theme.context";
 
 // Call make Server
 makeServer();
@@ -11,9 +12,11 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <ReducerProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
     </ReducerProvider>
   </React.StrictMode>,
   document.getElementById("root")
