@@ -1,34 +1,58 @@
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
 export const Sidebar = () => {
-  const location = useLocation();
-
   return (
     <ul className="sidebar-container">
       <div className="top-sidebar">
-        <span
-          className={`material-icons ${
-            location.pathname === "/videos" && "active"
-          }`}
+        <NavLink
+          to="/videos"
+          className={({ isActive }) => {
+            return isActive ? "active" : "";
+          }}
         >
-          explore
-        </span>
-        <span className={`material-icons ${
-            location.pathname === "/trending" && "active"
-          }`}>trending_up</span>
-        <span className={`material-icons ${
-            location.pathname === "/watchlater" && "active"
-          }`}>watch_later</span>
-        <span className={`material-icons ${
-            location.pathname === "/liked" && "active"
-          }`}>thumb_up</span>
-        <span className={`material-icons ${
-            location.pathname === "/playlist" && "active"
-          }`}>playlist_play</span>
-        <span className={`material-icons ${
-            location.pathname === "/history" && "active"
-          }`}>history</span>
+          <span className="material-icons">explore</span>
+        </NavLink>
+        <NavLink
+          to="/trending"
+          className={({ isActive }) => {
+            return isActive ? "active" : "";
+          }}
+        >
+          <span className="material-icons">trending_up</span>
+        </NavLink>
+        <NavLink
+          to="/watchlater"
+          className={({ isActive }) => {
+            return isActive ? "active" : "";
+          }}
+        >
+          <span className="material-icons">watch_later</span>
+        </NavLink>
+        <NavLink
+          to="/likedvideos"
+          className={({ isActive }) => {
+            return isActive ? "active" : "";
+          }}
+        >
+          <span className="material-icons">thumb_up</span>
+        </NavLink>
+        <NavLink
+          to="/playlist"
+          className={({ isActive }) => {
+            return isActive ? "active" : "";
+          }}
+        >
+          <span className="material-icons">playlist_play</span>
+        </NavLink>
+        <NavLink
+          to="/history"
+          className={({ isActive }) => {
+            return isActive ? "active" : "";
+          }}
+        >
+          <span className="material-icons">history</span>
+        </NavLink>
       </div>
       <div className="bottom-sidebar">
         <a href="https://github.com/B0llu">

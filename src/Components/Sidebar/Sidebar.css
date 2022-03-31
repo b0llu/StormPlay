@@ -1,3 +1,7 @@
+a {
+  color: var(--icon-color);
+}
+
 .sidebar-container {
   height: calc(100vh - 8.7rem);
   width: 10rem;
