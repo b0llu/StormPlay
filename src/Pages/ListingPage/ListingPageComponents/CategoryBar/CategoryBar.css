@@ -25,7 +25,7 @@ li {
 
 .categories li {
   margin: 5px 1rem;
-  color: var(--white);
+  color: #fff;
   font-weight: 500;
   background-color: var(--border-clr);
   padding: 1rem;
