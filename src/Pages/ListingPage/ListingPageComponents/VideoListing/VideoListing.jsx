@@ -1,4 +1,5 @@
 import axios from "axios";
+import { v4 as uuid } from "uuid";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader, VideoCard } from "../../../../Components";
@@ -33,7 +34,7 @@ export const VideoListing = ({ category }) => {
       {videos
         .filter((video) => (category ? video.category === category : video))
         .map((video) => {
-          return <VideoCard video={video} />;
+          return <VideoCard key={uuid()} video={video} />;
         })}
     </div>
   );
