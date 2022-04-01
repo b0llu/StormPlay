@@ -13,14 +13,14 @@ export const VideoCard = ({ video }) => {
         </span>
         <span className="material-icons video-like">thumb_up_off_alt</span>
         <span
-          onClick={() => setPlaylistModal(true)}
+          onClick={() => setPlaylistModal({ state: true, video: { ...video } })}
           className="material-icons playlist"
         >
           queue
         </span>
       </div>
       <div className="video-info">
-        <img className="creator-img" src={video.creatorThumbnail} />
+        {/* <img className="creator-img" src={video.creatorThumbnail} /> */}
         <div className="video-text">
           <span className="video-name">{video.shortTitle}</span>
           <span className="video-creator-name">{video.creator}</span>
