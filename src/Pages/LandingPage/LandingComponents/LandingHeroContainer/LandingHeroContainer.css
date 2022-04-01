@@ -30,7 +30,7 @@
   border-radius: 1rem;
   background-color: #3da4df;
   cursor: pointer;
-  color: var(--white);
+  color: #fff;
 }
 
 .text-btn:hover {

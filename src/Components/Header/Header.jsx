@@ -1,8 +1,10 @@
 import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
+import { useThemeContext } from "../../Context/Theme.context";
 
 export const Header = () => {
   const location = useLocation();
+  const { theme, toggleLightDarkTheme } = useThemeContext();
 
   return (
     <nav>
@@ -26,7 +28,12 @@ export const Header = () => {
                 </div>
               )}
             </Link> */}
-            <i id="toggle-theme" className="fas fa-moon icon icon-color"></i>
+            <i
+              onClick={toggleLightDarkTheme}
+              className={`${
+                theme === "light" ? "fas fa-moon" : "fas fa-sun"
+              } icon icon-color`}
+            ></i>
           </div>
         </div>
         {location.pathname !== "/" && (
