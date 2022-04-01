@@ -1,8 +1,7 @@
 import { Header, LandingContainer, Sidebar, Toast } from "./Components";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { LandingPage } from "./Pages";
+import { LandingPage, ListingPage } from "./Pages";
 import MockAPI from "./Mockman";
-import { ListingPage } from "./Pages/ListingPage/ListingPage";
 
 function App() {
   const location = useLocation();

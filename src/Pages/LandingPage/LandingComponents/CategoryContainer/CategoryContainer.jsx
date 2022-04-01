@@ -1,8 +1,9 @@
 import axios from "axios";
+import { v4 as uuid } from "uuid";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader, VideoCard } from "../../../../Components";
-import { useReducerContext } from "../../../../Context/Reducer.context";
+import { useReducerContext } from "../../../../Context";
 import "./CategoryContainer.css";
 
 export const CategoryContainer = () => {
@@ -73,7 +74,7 @@ export const CategoryContainer = () => {
           {mostViewed
             .filter((video) => video.category === "Basics")
             .map((video) => {
-              return <VideoCard video={video} />;
+              return <VideoCard key={uuid()} video={video} />;
             })}
         </div>
       )}
