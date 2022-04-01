@@ -1,15 +1,15 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
-import { useAuthContext } from "../../Context/Auth.context";
+import { useAuthContext } from "../../Context";
 
-const RestrictAuth = () => {
+
+export const RestrictAuth = () => {
   const { userState } = useAuthContext();
   const location = useLocation();
 
   return userState._id ? (
-    <Navigate to="/notes" state={{ from: location }} replace />
+    <Navigate to="/videos" state={{ from: location }} replace />
   ) : (
     <Outlet />
   );
 };
 
-export default RestrictAuth;

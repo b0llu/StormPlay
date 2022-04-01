@@ -5,3 +5,5 @@ export { Toast } from "./Toast/Toast";
 export { Loader } from "./Loader/Loader";
 export { VideoCard } from "./VideoCard/VideoCard";
 export { PlaylistModal } from "./PlaylistModal/PlaylistModal";
+export { RequireAuth } from "./PrivateRoute/RequireAuth";
+export { RestrictAuth } from "./PrivateRoute/RestrictAuth";

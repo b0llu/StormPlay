@@ -1,10 +1,14 @@
 import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
 import { useThemeContext } from "../../Context/Theme.context";
+import { useAuthContext } from "../../Context";
 
 export const Header = () => {
+  const encodedToken = localStorage.getItem("StormPlayToken");
+  const user = localStorage.getItem("StormPlayUser");
   const location = useLocation();
   const { theme, toggleLightDarkTheme } = useThemeContext();
+  const { signout } = useAuthContext();
 
   return (
     <nav>
@@ -17,17 +21,17 @@ export const Header = () => {
         )}
         <div className="margin-left-auto">
           <div className="icon-container">
-            {/* <p className="icon-color">username</p> */}
+            <p className="icon-color">{user}</p>
             <div className="badge">
               <i className="fa-solid fas fa-user icon-color"></i>
             </div>
-            {/* <Link to="/" element={<LoginBox />}>
+            <Link to="/">
               {encodedToken && (
-                <div onClick={() => signout()} className="badge">
+                <div onClick={signout} className="badge">
                   <i className="fas fa-sign-out icon-color"></i>
                 </div>
               )}
-            </Link> */}
+            </Link>
             <i
               onClick={toggleLightDarkTheme}
               className={`${
