@@ -12,7 +12,7 @@ export const Header = () => {
         <Link className="name" to="/">
           <i className="fas fa-bolt"></i> StormPlay
         </Link>
-        {location.pathname !== "/" && (
+        {location.pathname === "/videos" && (
           <input className="header-input" placeholder="Search" type="text" />
         )}
         <div className="margin-left-auto">
@@ -36,7 +36,7 @@ export const Header = () => {
             ></i>
           </div>
         </div>
-        {location.pathname !== "/" && (
+        {location.pathname === "/videos" && (
           <input className="mobile-input" type="text" placeholder="Search" />
         )}
       </div>

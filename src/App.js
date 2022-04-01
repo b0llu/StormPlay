@@ -1,4 +1,4 @@
-import { Header, LandingContainer, Sidebar, Toast } from "./Components";
+import { Header, LandingContainer, PlaylistModal, Sidebar, Toast } from "./Components";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { LandingPage, ListingPage, PlaylistPage } from "./Pages";
 import MockAPI from "./Mockman";
@@ -11,6 +11,7 @@ function App() {
       <Toast />
       <Header />
       {location.pathname !== "/" && <Sidebar />}
+      {/* <PlaylistModal /> */}
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
