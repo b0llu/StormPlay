@@ -1,0 +1,17 @@
+.individual-playlist-header {
+    color: var(--content-color);
+    text-align: center;
+}
+
+.individual-playlist-header h1 {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+
+.individual-playlist-video-container {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

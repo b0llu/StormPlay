@@ -6,3 +6,4 @@ export {
   LoginBox,
   SignupBox,
 } from "./AuthPage/ProfileComponents";
+export { IndividualPlaylistPage } from "./IndividualPlaylistPage/IndividualPlaylistPage";

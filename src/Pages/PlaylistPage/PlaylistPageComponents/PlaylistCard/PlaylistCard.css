@@ -61,10 +61,14 @@
 .playlist-info h1 {
     font-size: 2.5rem;
     font-weight: 500;
+    overflow-wrap: break-word;
+    text-align: center;
 }
 
 .playlist-info p {
     font-size: 1.5rem;
+    text-align: center;
+    overflow-wrap: break-word;
 }
 
 .for-column {

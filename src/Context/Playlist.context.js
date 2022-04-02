@@ -1,12 +1,11 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
-import { useReducerContext } from "./Reducer.context";
+import { AlertToast, SuccessToast } from "../Components";
 
 const PlaylistContext = createContext();
 
 const PlaylistProvider = ({ children }) => {
   const encodedToken = localStorage.getItem("StormPlayToken");
-  const { dispatch } = useReducerContext();
   const [playlistModal, setPlaylistModal] = useState({
     state: false,
     video: {},
@@ -32,15 +31,12 @@ const PlaylistProvider = ({ children }) => {
       );
 
       if (playlistResponse.status === 201) {
-
         // checking if add to playlist was clicked on video or not
+        SuccessToast("Playlist Created")
         if (Object.keys(playlistModal.video).length === 0) {
-          setPlaylistModal({ state: false, video: {} });
           setPlaylists(playlistResponse.data.playlists);
-          dispatch({ type: "SUCCESS_TOAST", payload: "Playlist Created" });
         } else {
           // if it was clicked on video
-          dispatch({ type: "SUCCESS_TOAST", payload: "Playlist Created" });
           try {
             // taking the id of playlist in which video will go
             const response = await axios.post(
@@ -58,14 +54,14 @@ const PlaylistProvider = ({ children }) => {
             );
 
             if (response.status === 201) {
-              setPlaylistModal({ state: false, video: {} });
+              SuccessToast("Video Added To Playlist");
               // checking if playlist is empty or not
               if (playlists.length !== 0) {
                 // checking if playlist is already in array or not
                 const index = playlists.findIndex(
                   (p) => p._id === response.data.playlist._id
                 );
-                  // playlist is not in array then
+                // playlist is not in array then
                 if (index === -1) {
                   setPlaylists((p) => [...p, response.data.playlist]);
                 } else {
@@ -82,11 +78,6 @@ const PlaylistProvider = ({ children }) => {
               } else {
                 setPlaylists([response.data.playlist]);
               }
-
-              dispatch({
-                type: "SUCCESS_TOAST",
-                payload: "Video Added to Playlist",
-              });
             }
           } catch (error) {
             console.log(error);
@@ -107,10 +98,68 @@ const PlaylistProvider = ({ children }) => {
       });
       if (response.status === 200) {
         setPlaylists(response.data.playlists);
-        dispatch({ type: "ERROR_TOAST", payload: "Playlist Deleted" });
+        AlertToast('Playlist Deleted')
       }
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const addVideo = async (playlistId) => {
+    try {
+      const response = await axios.post(
+        `/api/user/playlists/${playlistId}`,
+        { video: playlistModal.video },
+        { headers: { authorization: encodedToken } }
+      );
+      if (response.status === 201) {
+        setPlaylists((ps) =>
+          ps.map((p) =>
+            p._id === response.data.playlist._id ? response.data.playlist : p
+          )
+        );
+        SuccessToast("Video Added To Playlist")
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const removeVideo = async (playlistId, videoId) => {
+    if(!videoId) {
+      try {
+        const response = await axios.delete(
+          `/api/user/playlists/${playlistId}/${playlistModal.video._id}`,
+          { headers: { authorization: encodedToken } }
+        );
+        if (response.status === 200) {
+          setPlaylists((ps) =>
+            ps.map((p) =>
+              p._id === response.data.playlist._id ? response.data.playlist : p
+            )
+          );
+          AlertToast("Video Removed From Playlist")
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        const response = await axios.delete(
+          `/api/user/playlists/${playlistId}/${videoId}`,
+          { headers: { authorization: encodedToken } }
+        );
+        if (response.status === 200) {
+          setPlaylists((ps) =>
+            ps.map((p) =>
+              p._id === response.data.playlist._id ? response.data.playlist : p
+            )
+          );
+          AlertToast("Video Removed From Playlist");
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -122,6 +171,8 @@ const PlaylistProvider = ({ children }) => {
         playlists,
         addVideoToPlaylist,
         removePlaylist,
+        addVideo,
+        removeVideo,
       }}
     >
       {children}

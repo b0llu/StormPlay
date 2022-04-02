@@ -1,4 +1,5 @@
 import { usePlaylistContext } from "../../../../Context";
+import { Link } from "react-router-dom";
 import "./PlaylistCard.css";
 
 export const PlaylistCard = () => {
@@ -10,9 +11,7 @@ export const PlaylistCard = () => {
       <div className="create-playlist-container">
         <div className="create-playlist"></div>
         <span
-          onClick={() =>
-            setPlaylistModal({ state: true, video: {} })
-          }
+          onClick={() => setPlaylistModal({ state: true, video: {} })}
           className="material-icons"
         >
           playlist_add
@@ -24,8 +23,12 @@ export const PlaylistCard = () => {
             <div key={playlist._id} className="playlists">
               <div className="create-playlist"></div>
               <div className="playlist-info">
-                <h1>{playlist.title}</h1>
-                <p>{playlist.description}</p>
+                <Link to={`/playlist/${playlist._id}`}>
+                  <h1>{playlist.title}</h1>
+                </Link>
+                <Link to={`/playlist/${playlist._id}`}>
+                  <p>{playlist.description}</p>
+                </Link>
                 <div className="for-column">
                   <p>{playlist.videos.length} videos</p>
                   <span

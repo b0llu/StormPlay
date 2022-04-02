@@ -3,8 +3,14 @@ import { usePlaylistContext } from "../../Context";
 import "./PlaylistModal.css";
 
 export const PlaylistModal = () => {
-  const { playlists, playlistModal, setPlaylistModal, addVideoToPlaylist } =
-    usePlaylistContext();
+  const {
+    playlists,
+    playlistModal,
+    setPlaylistModal,
+    addVideoToPlaylist,
+    addVideo,
+    removeVideo,
+  } = usePlaylistContext();
   const [playlistDetails, setPlaylistDetails] = useState({
     title: "",
     description: "",
@@ -26,16 +32,29 @@ export const PlaylistModal = () => {
           <div className="available-playlists">
             {playlists.map((playlist) => {
               return (
-                <h1
-                  key={playlist._id}
-                  className={`${
-                    playlist.videos.findIndex(
-                      (v) => v._id === playlistModal.video._id
-                    ) !== -1 && "already-added"
-                  }`}
-                >
+                <label key={playlist._id}>
+                  <input
+                    checked={
+                      playlist.videos.findIndex(
+                        (v) => v._id === playlistModal.video._id
+                      ) !== -1
+                    }
+                    value={playlist._id}
+                    type="checkbox"
+                    onChange={(e) => {
+                      if (
+                        playlist.videos.findIndex(
+                          (v) => v._id === playlistModal.video._id
+                        ) !== -1
+                      ) {
+                        removeVideo(e.target.value);
+                      } else {
+                        addVideo(e.target.value);
+                      }
+                    }}
+                  />
                   {playlist.title}
-                </h1>
+                </label>
               );
             })}
           </div>
@@ -46,7 +65,7 @@ export const PlaylistModal = () => {
               setPlaylistDetails({ ...playlistDetails, title: e.target.value })
             }
             value={playlistDetails.title}
-            maxLength="30"
+            maxLength="12"
             type="text"
             placeholder="Title of Playlist"
             autoFocus
@@ -59,7 +78,7 @@ export const PlaylistModal = () => {
               })
             }
             value={playlistDetails.description}
-            maxLength="30"
+            maxLength="15"
             type="text"
             placeholder="Description of Playlist"
           />

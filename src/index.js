@@ -14,13 +14,13 @@ ReactDOM.render(
   <React.StrictMode>
     <ReducerProvider>
       <ThemeProvider>
-        <PlaylistProvider>
-          <AuthProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </AuthProvider>
-        </PlaylistProvider>
+          <PlaylistProvider>
+            <AuthProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </AuthProvider>
+          </PlaylistProvider>
       </ThemeProvider>
     </ReducerProvider>
   </React.StrictMode>,

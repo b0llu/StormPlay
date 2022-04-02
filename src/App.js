@@ -5,11 +5,11 @@ import {
   RequireAuth,
   RestrictAuth,
   Sidebar,
-  Toast,
 } from "./Components";
 import { Routes, Route, useLocation } from "react-router-dom";
 import {
   AuthContainer,
+  IndividualPlaylistPage,
   LandingPage,
   ListingPage,
   LoginBox,
@@ -17,13 +17,14 @@ import {
   SignupBox,
 } from "./Pages";
 import MockAPI from "./Mockman";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const location = useLocation();
 
   return (
     <LandingContainer>
-      <Toast />
+      <ToastContainer />
       <Header />
       {location.pathname !== "/" &&
         location.pathname !== "/login" &&
@@ -37,6 +38,10 @@ function App() {
 
         <Route element={<RequireAuth />}>
           <Route path="/playlist" element={<PlaylistPage />} />
+          <Route
+            path="/playlist/:playlistId"
+            element={<IndividualPlaylistPage />}
+          />
         </Route>
 
         <Route element={<RestrictAuth />}>

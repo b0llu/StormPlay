@@ -1,0 +1,13 @@
+.Toastify__toast--error {
+    border: 1px solid var(--content-color);
+    border-radius: 1rem ;
+    background: var(--card-container-bg);
+    font-size: 2rem;
+}
+
+.Toastify__toast--success {
+    border: 1px solid var(--content-color);
+    border-radius: 1rem ;
+    background: var(--card-container-bg);
+    font-size: 2rem;
+}

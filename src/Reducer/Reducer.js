@@ -29,6 +29,13 @@ export const Reducer = (state, action) => {
         },
       };
 
+    // storing products
+    case "INITIALIZE_VIDEOS":
+      return {
+        ...state,
+        videos: action.payload,
+      };
+
     // toast state handler
     case "TOAST_STATE_CLEAN":
       return {
