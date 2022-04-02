@@ -1,14 +1,14 @@
 import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
+import { AlertToast, SuccessToast } from "../Components";
 import { useReducerContext } from "./Reducer.context";
-
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const encodedToken = localStorage.getItem("StormPlayToken");
-  const { dispatch } = useReducerContext();
   const [userState, setUserState] = useState([]);
+  const [effectTrigger, setEffectTrigger] = useState(false);
 
   const login = async (userDetails) => {
     try {
@@ -19,9 +19,10 @@ const AuthProvider = ({ children }) => {
       // saving the encodedToken in the localStorage
       localStorage.setItem("StormPlayToken", data.encodedToken);
       localStorage.setItem("StormPlayUser", data.foundUser.firstName);
-      dispatch({ type: "SUCCESS_TOAST", payload: "Log In Successful" });
+      SuccessToast("Login Successful");
+      setEffectTrigger(!effectTrigger);
     } catch (error) {
-      dispatch({ type: "ERROR_TOAST", payload: error.response.data.errors });
+      AlertToast(`${error.response.data.errors}`);
     }
   };
 
@@ -35,16 +36,18 @@ const AuthProvider = ({ children }) => {
       // saving the encodedToken in the localStorage
       localStorage.setItem("StormPlayToken", data.encodedToken);
       localStorage.setItem("StormPlayUser", data.createdUser.firstName);
-      dispatch({ type: "SUCCESS_TOAST", payload: "Sign Up Successful" });
+      SuccessToast("Signup Successful");
+      setEffectTrigger(!effectTrigger);
     } catch (error) {
-      dispatch({ type: "ERROR_TOAST", payload: error.response.data.errors });
+      AlertToast(`${error.response.data.errors}`);
     }
   };
 
   const signout = () => {
-    dispatch({ type: "ERROR_TOAST", payload: "Logged Out" });
-    localStorage.removeItem('StormPlayToken');
-    localStorage.removeItem('StormPlayUser');
+    setEffectTrigger(!effectTrigger);
+    AlertToast(`Logged Out`);
+    localStorage.removeItem("StormPlayToken");
+    localStorage.removeItem("StormPlayUser");
     setUserState([]);
   };
 
@@ -56,9 +59,10 @@ const AuthProvider = ({ children }) => {
       });
       localStorage.setItem("StormPlayToken", data.encodedToken);
       localStorage.setItem("StormPlayUser", data.foundUser.firstName);
-      dispatch({ type: "SUCCESS_TOAST", payload: "Log In Successful" });
+      SuccessToast("Login Successful");
+      setEffectTrigger(!effectTrigger)
     } catch (error) {
-      dispatch({ type: "ERROR_TOAST", payload: error.response.data.errors });
+      AlertToast(`${error.response.data.errors}`);
     }
   };
 
@@ -77,7 +81,7 @@ const AuthProvider = ({ children }) => {
         }
       }
     })();
-  }, [encodedToken]);
+  }, [effectTrigger]);
 
   return (
     <AuthContext.Provider

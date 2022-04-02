@@ -1,4 +1,5 @@
 .Toastify__toast--error {
+    top: 10rem;
     border: 1px solid var(--content-color);
     border-radius: 1rem ;
     background: var(--card-container-bg);
@@ -6,6 +7,7 @@
 }
 
 .Toastify__toast--success {
+    top: 10rem;
     border: 1px solid var(--content-color);
     border-radius: 1rem ;
     background: var(--card-container-bg);
