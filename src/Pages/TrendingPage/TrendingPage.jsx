@@ -1,6 +1,5 @@
 import { Loader, VideoCard } from "../../Components";
 import { useReducerContext } from "../../Context";
-import { v4 as uuid } from "uuid";
 import "./TrendingPage.css";
 import { useEffect } from "react";
 import axios from "axios";
@@ -36,9 +35,9 @@ export const TrendingPage = () => {
       ) : (
         <div className="trending-video-container">
           {videos
-            .filter((video) => (video.trending ? video : null))
+            .filter((video) => video.trending)
             .map((video) => {
-              return <VideoCard key={uuid()} video={video} />;
+              return <VideoCard key={video._id} video={video} />;
             })}
         </div>
       )}
