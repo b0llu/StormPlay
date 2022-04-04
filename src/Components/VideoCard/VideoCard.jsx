@@ -10,7 +10,9 @@ export const VideoCard = ({ video }) => {
   return (
     <div key={video._id} className="video-card">
       <div className="for-positioning">
-        <img className="rsp-img" src={video.thumbnail} alt="" />
+        <Link to={`/videos/${video._id}`}>
+          <img className="rsp-img" src={video.thumbnail} alt="" />
+        </Link>
         <span className="material-icons-outlined video-watchLater">
           watch_later
         </span>
@@ -37,8 +39,7 @@ export const VideoCard = ({ video }) => {
               <span className="video-creator-name">
                 {video.views} | {video.publishDate}
                 <span
-                  onClick={() => {
-                    console.log(playlistModal);
+                  onClick={() => {-
                     removeVideo(playlistId, video._id);
                   }}
                   className="material-icons"

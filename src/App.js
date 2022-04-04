@@ -17,6 +17,7 @@ import {
   LoginBox,
   PlaylistPage,
   SignupBox,
+  SingleVideoPage,
   TrendingPage,
 } from "./Pages";
 
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/videos" element={<ListingPage />} />
+        <Route path="/videos/:videoId" element={<SingleVideoPage />} />
         <Route path="/trending" element={<TrendingPage />} />
 
         <Route element={<RequireAuth />}>

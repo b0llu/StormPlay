@@ -75,6 +75,10 @@ a {
     flex-direction: row;
   }
 
+  .top-sidebar a {
+    margin-top: 0;
+  }
+
   .bottom-sidebar {
     display: none;
   }
