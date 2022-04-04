@@ -1,3 +1,6 @@
+import { Routes, Route, useLocation } from "react-router-dom";
+import MockAPI from "./Mockman";
+import { ToastContainer } from "react-toastify";
 import {
   Header,
   LandingContainer,
@@ -6,7 +9,6 @@ import {
   RestrictAuth,
   Sidebar,
 } from "./Components";
-import { Routes, Route, useLocation } from "react-router-dom";
 import {
   AuthContainer,
   IndividualPlaylistPage,
@@ -15,13 +17,11 @@ import {
   LoginBox,
   PlaylistPage,
   SignupBox,
+  TrendingPage,
 } from "./Pages";
-import MockAPI from "./Mockman";
-import { ToastContainer } from "react-toastify";
 
 function App() {
   const location = useLocation();
-
   return (
     <LandingContainer>
       <ToastContainer />
@@ -34,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/videos" element={<ListingPage />} />
-        <Route path="/mockman" element={<MockAPI />} />
+        <Route path="/trending" element={<TrendingPage />} />
 
         <Route element={<RequireAuth />}>
           <Route path="/playlist" element={<PlaylistPage />} />
@@ -62,6 +62,7 @@ function App() {
             }
           />
         </Route>
+        <Route path="/mockman" element={<MockAPI />} />
       </Routes>
     </LandingContainer>
   );

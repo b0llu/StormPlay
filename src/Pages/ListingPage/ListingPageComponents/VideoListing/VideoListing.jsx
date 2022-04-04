@@ -7,26 +7,11 @@ import { useReducerContext } from "../../../../Context/Reducer.context";
 import "./VideoListing.css";
 
 export const VideoListing = ({ category }) => {
-  const { loading, videos, dispatch } = useReducerContext();
+  const { loading, videos } = useReducerContext();
   const navigate = useNavigate();
 
   useEffect(() => {
     navigate("/videos");
-    dispatch({ type: "LOADING" }),
-      (async function () {
-        try {
-          const response = await axios.get("/api/videos");
-          if (response.status === 200) {
-            dispatch({
-              type: "INITIALIZE_VIDEOS",
-              payload: response.data.videos,
-            });
-            dispatch({ type: "LOADING" });
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      })();
   }, []);
 
   return loading ? (
