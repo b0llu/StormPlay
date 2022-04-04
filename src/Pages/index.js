@@ -7,3 +7,4 @@ export {
   SignupBox,
 } from "./AuthPage/ProfileComponents";
 export { IndividualPlaylistPage } from "./IndividualPlaylistPage/IndividualPlaylistPage";
+export { TrendingPage } from "./TrendingPage/TrendingPage";
