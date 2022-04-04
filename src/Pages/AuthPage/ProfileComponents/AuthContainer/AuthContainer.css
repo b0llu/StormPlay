@@ -1,0 +1,114 @@
+:root {
+    --login-color: #238ac5;
+    --login-color-dark: #0A71AC;
+    --text-black: black;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: larger;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 6rem;
+    gap: 10px;
+    background-color: #d8dcdf;
+    color: var(--login-color);
+    border-radius: 5px;
+    width: 50rem;
+}
+
+.login-container h1 {
+    font-size: 2rem;
+    color: var(--text-black);
+}
+
+.login-container a {
+    text-decoration: none;
+}
+
+.login-container .block-inputs {
+    border-radius: 5px;
+    padding: 8px;
+    border: none;
+}
+
+.remember-me {
+    display: flex;
+    gap: 1rem;
+}
+
+::placeholder {
+    padding: 0 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* forget button */
+.btn-forgot {
+    color: var(--text-black);
+    text-align: center;
+}
+
+/* login button */
+.btn-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--login-color);
+    border: none;
+    color: var(--text-black);
+    font-weight: 500;
+    width: 100%;
+}
+
+.btn-login:hover {
+    background-color: var(--login-color-dark);
+    transition: 0.2s ease-in-out;
+}
+
+.login-container .btn-login {
+    padding: 8px 0;
+}
+
+/* sign up btn*/
+.btn-sign-up {
+    margin-top: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--login-color);
+}
+
+.for-alert {
+    position: absolute;
+    background-color: var(--alert-color);
+    color: var(--for-theme);
+    padding: 2rem;
+    font-size: 2rem;
+    top: 13rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.block-inputs {
+    width: 100%;
+}
+
+.visibility-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .login-container {
+        width: 35rem;
+    }
+}

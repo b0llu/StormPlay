@@ -1,9 +1,7 @@
-import "./ListingPage.css";
 import { useState } from "react";
-import { CategoryBar } from "./ListingPageComponents/CategoryBar/CategoryBar";
-import { VideoListing } from "./ListingPageComponents/VideoListing/VideoListing";
 import { useSearchParams } from "react-router-dom";
 import { useDocTitle } from "../../Hook/useTitle";
+import { CategoryBar, VideoListing } from "./ListingPageComponents";
 
 export const ListingPage = () => {
   const [searchParams] = useSearchParams();

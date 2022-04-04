@@ -1,0 +1,97 @@
+input::-webkit-input-placeholder {
+  padding-left: 0;
+}
+
+.playlistModal-wrapper {
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  position: fixed;
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.playlistModal {
+  background-color: var(--card-container-bg);
+  color: var(--content-color);
+  border-radius: 1rem;
+  position: relative;
+  width: 30rem;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.modal-title span {
+  cursor: pointer;
+}
+
+.modal-title span:hover {
+  color: var(--alert-color);
+  transition: 0.2s ease-in-out;
+}
+
+.modal-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-input input {
+  margin: 1rem 1rem 0 1rem;
+  padding: 5px;
+  background-color: var(--card-container-bg);
+  border: 1px solid var(--content-color);
+  border-radius: 5px;
+  color: var(--content-color);
+}
+
+.modal-input button {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 5px 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--content-color);
+  color: var(--content-color);
+  background-color: var(--card-container-bg);
+  cursor: pointer;
+  width: max-content;
+  align-self: center;
+}
+
+.modal-input button:hover {
+  color: var(--primary-color);
+  transition: 0.2s ease-in-out;
+}
+
+.available-playlists {
+  border-top: 1px solid var(--content-color);
+  border-bottom: 1px solid var(--content-color);
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.available-playlists label {
+  font-weight: 500;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.available-playlists label input {
+  margin: 0 1rem;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}

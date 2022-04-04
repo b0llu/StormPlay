@@ -7,6 +7,13 @@ export const Reducer = (state, action) => {
         loading: !state.loading,
       };
 
+    // storing products
+    case "INITIALIZE_VIDEOS":
+      return {
+        ...state,
+        videos: action.payload,
+      };
+
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }

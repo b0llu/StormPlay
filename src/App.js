@@ -1,22 +1,67 @@
-import { Header, LandingContainer, Sidebar, Toast } from "./Components";
+import {
+  Header,
+  LandingContainer,
+  PlaylistModal,
+  RequireAuth,
+  RestrictAuth,
+  Sidebar,
+} from "./Components";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { LandingPage } from "./Pages";
+import {
+  AuthContainer,
+  IndividualPlaylistPage,
+  LandingPage,
+  ListingPage,
+  LoginBox,
+  PlaylistPage,
+  SignupBox,
+} from "./Pages";
 import MockAPI from "./Mockman";
-import { ListingPage } from "./Pages/ListingPage/ListingPage";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const location = useLocation();
 
   return (
     <LandingContainer>
-      <Toast />
+      <ToastContainer />
       <Header />
-      {location.pathname !== "/" && <Sidebar />}
+      {location.pathname !== "/" &&
+        location.pathname !== "/login" &&
+        location.pathname !== "/signup" && <Sidebar />}
+      <PlaylistModal />
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/videos" element={<ListingPage />} />
         <Route path="/mockman" element={<MockAPI />} />
+
+        <Route element={<RequireAuth />}>
+          <Route path="/playlist" element={<PlaylistPage />} />
+          <Route
+            path="/playlist/:playlistId"
+            element={<IndividualPlaylistPage />}
+          />
+        </Route>
+
+        <Route element={<RestrictAuth />}>
+          <Route
+            path="/login"
+            element={
+              <AuthContainer>
+                <LoginBox />
+              </AuthContainer>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <AuthContainer>
+                <SignupBox />
+              </AuthContainer>
+            }
+          />
+        </Route>
       </Routes>
     </LandingContainer>
   );

@@ -5,6 +5,7 @@ import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import { ReducerProvider } from "./Context/Reducer.context";
 import { ThemeProvider } from "./Context/Theme.context";
+import { AuthProvider, PlaylistProvider } from "./Context";
 
 // Call make Server
 makeServer();
@@ -13,9 +14,13 @@ ReactDOM.render(
   <React.StrictMode>
     <ReducerProvider>
       <ThemeProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+          <PlaylistProvider>
+            <AuthProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </AuthProvider>
+          </PlaylistProvider>
       </ThemeProvider>
     </ReducerProvider>
   </React.StrictMode>,

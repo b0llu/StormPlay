@@ -1,7 +1,7 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
-import { useAuthContext } from "../../Context/Auth.context";
+import { useAuthContext } from "../../Context";
 
-const RequireAuth = () => {
+export const RequireAuth = () => {
   const { userState } = useAuthContext();
   const location = useLocation();
   return userState._id ? (
@@ -11,4 +11,3 @@ const RequireAuth = () => {
   );
 };
 
-export default RequireAuth;
