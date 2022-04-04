@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./PlaylistCard.css";
 
 export const PlaylistCard = () => {
-  const { setPlaylistModal, playlists, removePlaylist, playlistModal } =
+  const { setPlaylistModal, playlists, removePlaylist } =
     usePlaylistContext();
 
   return (
