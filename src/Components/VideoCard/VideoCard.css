@@ -42,21 +42,8 @@
 .video-watchLater {
   font-size: 3.5rem;
   position: absolute;
-  top: 0;
-  right: 0;
-  color: #fff;
-  cursor: pointer;
-  margin: 5px;
-  background-color: rgb(81, 79, 79, 0.6);
-  border-radius: 1rem;
-  padding: 3px;
-}
-
-.video-like {
-  font-size: 3.5rem;
-  position: absolute;
   bottom: 0;
-  left: 0;
+  right: 4.5rem;
   color: #fff;
   cursor: pointer;
   margin: 5px;
@@ -86,9 +73,10 @@
 }
 
 .creator-img {
-  height: 5rem;
-  width: 5rem;
+  height: 5.5rem;
+  width: 5.5rem;
   border-radius: 50%;
+  margin-top: 5px;
 }
 
 .for-positioning {

@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
-import { usePlaylistContext } from "../../Context";
+import { useParams, Link } from "react-router-dom";
+import { usePlaylistContext, useAuthContext } from "../../Context";
 import "./VideoCard.css";
 
 export const VideoCard = ({ video }) => {
   const { setPlaylistModal, removeVideo, playlistModal } = usePlaylistContext();
   const { playlistId } = useParams();
+  const { userState } = useAuthContext();
 
   return (
     <div key={video._id} className="video-card">
@@ -13,13 +14,18 @@ export const VideoCard = ({ video }) => {
         <span className="material-icons-outlined video-watchLater">
           watch_later
         </span>
-        <span className="material-icons video-like">thumb_up_off_alt</span>
-        <span
-          onClick={() => setPlaylistModal({ state: true, video: video })}
-          className="material-icons playlist"
-        >
-          queue
-        </span>
+        {Object.keys(userState).length === 0 ? (
+          <Link to="/login">
+            <span className="material-icons playlist">queue</span>
+          </Link>
+        ) : (
+          <span
+            onClick={() => setPlaylistModal({ state: true, video: video })}
+            className="material-icons playlist"
+          >
+            queue
+          </span>
+        )}
       </div>
       <div className="video-info">
         <img className="creator-img" src={video.creatorThumbnail} />

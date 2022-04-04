@@ -93,4 +93,5 @@ input::-webkit-input-placeholder {
   margin: 0 1rem;
   height: 2rem;
   width: 2rem;
+  cursor: pointer;
 }

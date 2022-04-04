@@ -7,7 +7,7 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const encodedToken = localStorage.getItem("StormPlayToken");
-  const [userState, setUserState] = useState([]);
+  const [userState, setUserState] = useState({});
   const [effectTrigger, setEffectTrigger] = useState(false);
 
   const login = async (userDetails) => {
@@ -60,7 +60,7 @@ const AuthProvider = ({ children }) => {
       localStorage.setItem("StormPlayToken", data.encodedToken);
       localStorage.setItem("StormPlayUser", data.foundUser.firstName);
       SuccessToast("Login Successful");
-      setEffectTrigger(!effectTrigger)
+      setEffectTrigger(!effectTrigger);
     } catch (error) {
       AlertToast(`${error.response.data.errors}`);
     }
