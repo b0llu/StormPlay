@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ReducerProvider } from "Context/Reducer.context";
 import { ThemeProvider } from "Context/Theme.context";
 import { AuthProvider, PlaylistProvider } from "Context";
+import { HistoryProvider } from "Context/History.context";
 
 // Call make Server
 makeServer();
@@ -13,7 +14,8 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <ReducerProvider>
-      <ThemeProvider>
+      <HistoryProvider>
+        <ThemeProvider>
           <PlaylistProvider>
             <AuthProvider>
               <BrowserRouter>
@@ -21,7 +23,8 @@ ReactDOM.render(
               </BrowserRouter>
             </AuthProvider>
           </PlaylistProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </HistoryProvider>
     </ReducerProvider>
   </React.StrictMode>,
   document.getElementById("root")

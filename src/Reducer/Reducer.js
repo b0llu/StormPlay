@@ -1,4 +1,8 @@
+import axios from "axios";
+
 export const Reducer = (state, action) => {
+  const encodedToken = localStorage.getItem("StormPlayToken");
+
   switch (action.type) {
     // loading case
     case "LOADING":
@@ -13,6 +17,10 @@ export const Reducer = (state, action) => {
         ...state,
         videos: action.payload,
       };
+
+    // storing history
+    case "HISTORY":
+      return { ...state, history: action.payload };
 
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
