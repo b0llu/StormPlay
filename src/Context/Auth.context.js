@@ -1,7 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
-import { AlertToast, SuccessToast } from "../Components";
-import { useReducerContext } from "./Reducer.context";
+import { AlertToast, SuccessToast } from "Components";
 
 const AuthContext = createContext();
 

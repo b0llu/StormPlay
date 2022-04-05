@@ -1,4 +1,4 @@
-import { usePlaylistContext } from "../../../../Context";
+import { usePlaylistContext } from "Context";
 import { Link } from "react-router-dom";
 import "./PlaylistCard.css";
 

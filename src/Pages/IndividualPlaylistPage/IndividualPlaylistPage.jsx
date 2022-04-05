@@ -2,13 +2,13 @@ import axios from "axios";
 import "./IndividualPlaylistPage.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { usePlaylistContext, useReducerContext } from "../../Context";
-import { Loader, VideoCard } from "../../Components";
+import { usePlaylistContext, useReducerContext } from "Context";
+import { Loader, VideoCard } from "Components";
 
 export const IndividualPlaylistPage = () => {
-  const { loading, dispatch } = useReducerContext();
   const encodedToken = localStorage.getItem("StormPlayToken");
   const [playlist, setPlaylist] = useState({ name: "", videos: [] });
+  const { loading, dispatch } = useReducerContext();
   const { playlistId } = useParams();
   const { playlists } = usePlaylistContext();
 

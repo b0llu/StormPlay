@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
-import { AlertToast, SuccessToast } from "../Components";
+import { AlertToast, SuccessToast } from "Components";
 
 const PlaylistContext = createContext();
 

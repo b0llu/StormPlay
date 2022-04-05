@@ -1,6 +1,6 @@
 import { CategoryContainer, LandingHeroContainer } from "./LandingComponents";
+import {useDocTitle} from 'Hook/useTitle'
 import "./LandingPage.css";
-import {useDocTitle} from '../../Hook/useTitle'
 
 export const LandingPage = () => {
   useDocTitle("Home | StormPlay")

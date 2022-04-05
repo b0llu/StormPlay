@@ -1,0 +1,43 @@
+.description-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem;
+    flex-direction: column;
+    border-bottom: 1px solid var(--content-color);
+}
+
+.creator-stats {
+    display: flex;
+    color: var(--content-color);
+    align-items: center;
+    width: 100%;
+}
+
+.creator-sub {
+    margin-left: 2rem;
+}
+
+.creator-sub h1, .creator-sub h2 {
+    margin: 5px;
+}
+
+.sub-btn {
+    margin-left: auto;
+    background-color: var(--card-container-bg);
+    border: 1px solid var(--content-color);
+    color: var(--content-color);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.sub-btn:hover {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    transition: 0.2s ease-in-out;
+}
+
+.description-container p {
+    font-size: 2rem;
+    color: var(--content-color);
+    padding: 2rem 0;
+}

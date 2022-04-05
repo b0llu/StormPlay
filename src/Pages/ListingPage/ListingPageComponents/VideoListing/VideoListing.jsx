@@ -1,9 +1,7 @@
-import axios from "axios";
-import { v4 as uuid } from "uuid";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Loader, VideoCard } from "../../../../Components";
-import { useReducerContext } from "../../../../Context/Reducer.context";
+import { Loader, VideoCard } from "Components";
+import { useReducerContext } from "Context/Reducer.context";
 import "./VideoListing.css";
 
 export const VideoListing = ({ category }) => {
@@ -21,7 +19,7 @@ export const VideoListing = ({ category }) => {
       {videos
         .filter((video) => (category ? video.category === category : video))
         .map((video) => {
-          return <VideoCard key={uuid()} video={video} />;
+          return <VideoCard key={video._id} video={video} />;
         })}
     </div>
   );

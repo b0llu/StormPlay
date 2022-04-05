@@ -1,5 +1,5 @@
-import "./LandingHeroContainer.css";
 import { Link } from "react-router-dom";
+import "./LandingHeroContainer.css";
 
 export const LandingHeroContainer = () => {
   return (

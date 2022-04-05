@@ -1,0 +1,29 @@
+.iframe-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.iframe-container iframe {
+    height: 75vh;
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .iframe-container iframe {
+    height: 60vh;
+}
+}
+
+@media screen and (max-width: 850px) {
+    .iframe-container iframe {
+    height: 50vh;
+}
+}
+
+@media screen and (max-width: 500px) {
+    .iframe-container iframe {
+    height: 30vh;
+}
+}

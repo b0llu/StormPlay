@@ -1,31 +1,12 @@
-import axios from "axios";
-import { createContext, useContext, useReducer, useEffect } from "react";
-import { Reducer } from "../Reducer/Reducer";
+import { createContext, useContext, useReducer } from "react";
+import { Reducer } from "Reducer/Reducer";
 
 const ReducerContext = createContext();
 
 const ReducerProvider = ({ children }) => {
   const [{ loading, videos }, dispatch] = useReducer(Reducer, {
     loading: false,
-    videos: [
-      useEffect(() => {
-        dispatch({ type: "LOADING" }),
-          (async function () {
-            try {
-              const response = await axios.get("/api/videos");
-              if (response.status === 200) {
-                dispatch({
-                  type: "INITIALIZE_VIDEOS",
-                  payload: response.data.videos,
-                });
-                dispatch({ type: "LOADING" });
-              }
-            } catch (error) {
-              console.log(error);
-            }
-          })();
-      }, []),
-    ],
+    videos: [],
   });
 
   return (

@@ -1,11 +1,16 @@
-import { Loader, VideoCard } from "Components";
-import { useReducerContext } from "Context";
-import { useEffect } from "react";
 import axios from "axios";
-import "./TrendingPage.css";
+import { useEffect } from "react";
+import { Loader } from "Components";
+import { useReducerContext } from "Context";
+import {
+  RelatedVideos,
+  VideoContainer,
+  VideoDescription,
+  VideoInfo,
+} from "./SingleVidePageComponents";
 
-export const TrendingPage = () => {
-  const { videos, loading, dispatch } = useReducerContext();
+export const SingleVideoPage = () => {
+  const { dispatch, loading } = useReducerContext();
 
   useEffect(() => {
     dispatch({ type: "LOADING" }),
@@ -27,19 +32,15 @@ export const TrendingPage = () => {
 
   return (
     <section>
-      <div className="trending-header">
-        <h1>Trending Today</h1>
-      </div>
       {loading ? (
         <Loader />
       ) : (
-        <div className="trending-video-container">
-          {videos
-            .filter((video) => video.trending)
-            .map((video) => {
-              return <VideoCard key={video._id} video={video} />;
-            })}
-        </div>
+        <>
+          <VideoContainer />
+          <VideoInfo />
+          <VideoDescription />
+          <RelatedVideos />
+        </>
       )}
     </section>
   );

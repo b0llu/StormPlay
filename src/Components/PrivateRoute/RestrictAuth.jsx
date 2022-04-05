@@ -1,5 +1,5 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
-import { useAuthContext } from "../../Context";
+import { useAuthContext } from "Context";
 
 
 export const RestrictAuth = () => {
