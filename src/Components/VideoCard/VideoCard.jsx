@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
-import { usePlaylistContext, useAuthContext } from "../../Context";
+import { usePlaylistContext, useAuthContext } from "Context";
 import "./VideoCard.css";
 
 export const VideoCard = ({ video }) => {
-  const { setPlaylistModal, removeVideo, playlistModal } = usePlaylistContext();
+  const { setPlaylistModal, removeVideo } = usePlaylistContext();
   const { playlistId } = useParams();
   const { userState } = useAuthContext();
 
@@ -11,7 +11,11 @@ export const VideoCard = ({ video }) => {
     <div key={video._id} className="video-card">
       <div className="for-positioning">
         <Link to={`/videos/${video._id}`}>
-          <img className="rsp-img" src={video.thumbnail} alt="" />
+          <img
+            className="rsp-img"
+            src={video.thumbnail}
+            alt="video-thumbnail"
+          />
         </Link>
         <span className="material-icons-outlined video-watchLater">
           watch_later
@@ -39,8 +43,8 @@ export const VideoCard = ({ video }) => {
               <span className="video-creator-name">
                 {video.views} | {video.publishDate}
                 <span
-                  onClick={() => {-
-                    removeVideo(playlistId, video._id);
+                  onClick={() => {
+                    -removeVideo(playlistId, video._id);
                   }}
                   className="material-icons"
                 >

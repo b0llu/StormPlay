@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { Loader } from "../../Components";
-import { useReducerContext } from "../../Context";
+import { Loader } from "Components";
+import { useReducerContext } from "Context";
 import {
   RelatedVideos,
   VideoContainer,

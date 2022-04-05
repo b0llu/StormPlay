@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { useReducerContext } from "../../../../Context";
 import "./VideoContainer.css";
 
 export const VideoContainer = () => {

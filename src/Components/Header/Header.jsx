@@ -1,7 +1,7 @@
 import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
-import { useThemeContext } from "../../Context/Theme.context";
-import { useAuthContext } from "../../Context";
+import { useThemeContext } from "Context/Theme.context";
+import { useAuthContext } from "Context";
 
 export const Header = () => {
   const encodedToken = localStorage.getItem("StormPlayToken");

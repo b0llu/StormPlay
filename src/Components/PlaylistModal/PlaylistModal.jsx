@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { usePlaylistContext } from "../../Context";
+import { usePlaylistContext } from "Context";
 import "./PlaylistModal.css";
 
 export const PlaylistModal = () => {

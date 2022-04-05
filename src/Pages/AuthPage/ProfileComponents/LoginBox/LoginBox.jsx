@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { AuthContainer } from "../AuthContainer/AuthContainer";
 import { SignupBox } from "../SignupBox/SignupBox";
-import { useDocTitle } from "../../../../Hook/useTitle";
-import { useAuthContext } from "../../../../Context";
+import { useDocTitle } from "Hook/useTitle";
+import { useAuthContext } from "Context";
 
 
 export const LoginBox = () => {

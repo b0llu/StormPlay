@@ -1,5 +1,5 @@
-import { VideoCard } from "../../../../Components";
-import { useReducerContext } from "../../../../Context";
+import { VideoCard } from "Components";
+import { useReducerContext } from "Context";
 import "./RelatedVideos.css";
 
 export const RelatedVideos = () => {

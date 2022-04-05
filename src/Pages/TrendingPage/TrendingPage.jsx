@@ -1,9 +1,8 @@
-import { Loader, VideoCard } from "../../Components";
-import { useReducerContext } from "../../Context";
-import { v4 as uuid } from "uuid";
-import "./TrendingPage.css";
+import { Loader, VideoCard } from "Components";
+import { useReducerContext } from "Context";
 import { useEffect } from "react";
 import axios from "axios";
+import "./TrendingPage.css";
 
 export const TrendingPage = () => {
   const { videos, loading, dispatch } = useReducerContext();
@@ -38,7 +37,7 @@ export const TrendingPage = () => {
           {videos
             .filter((video) => (video.trending ? video : null))
             .map((video) => {
-              return <VideoCard key={uuid()} video={video} />;
+              return <VideoCard key={video._id} video={video} />;
             })}
         </div>
       )}

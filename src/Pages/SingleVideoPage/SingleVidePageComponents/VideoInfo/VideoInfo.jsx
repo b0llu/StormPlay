@@ -3,7 +3,7 @@ import {
   useAuthContext,
   usePlaylistContext,
   useReducerContext,
-} from "../../../../Context";
+} from "Context";
 import "./VideoInfo.css";
 
 export const VideoInfo = () => {
