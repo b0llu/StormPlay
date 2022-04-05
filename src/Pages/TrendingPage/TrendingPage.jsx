@@ -35,7 +35,7 @@ export const TrendingPage = () => {
       ) : (
         <div className="trending-video-container">
           {videos
-            .filter((video) => (video.trending ? video : null))
+            .filter((video) => video.trending)
             .map((video) => {
               return <VideoCard key={video._id} video={video} />;
             })}
