@@ -14,6 +14,7 @@ import {
   HistoryPage,
   IndividualPlaylistPage,
   LandingPage,
+  LikedPage,
   ListingPage,
   LoginBox,
   PlaylistPage,
@@ -46,6 +47,7 @@ function App() {
             path="/playlist/:playlistId"
             element={<IndividualPlaylistPage />}
           />
+          <Route path="/liked" element={<LikedPage />} />
         </Route>
 
         <Route element={<RestrictAuth />}>

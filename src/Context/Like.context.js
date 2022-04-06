@@ -28,7 +28,6 @@ const LikeProvider = ({ children }) => {
       const response = await axios.delete(`/api/user/likes/${id}`, {
         headers: { authorization: encodedToken },
       });
-      console.log(response)
       if (response.status === 200) {
         dispatch({ type: "LIKED", payload: response.data.likes });
       }
