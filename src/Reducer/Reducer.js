@@ -22,8 +22,6 @@ export const Reducer = (state, action) => {
     case "HISTORY":
       return { ...state, history: action.payload };
 
-<<<<<<< Updated upstream
-=======
     // storing likes
     case "LIKED":
       return { ...state, liked: action.payload };
@@ -32,7 +30,6 @@ export const Reducer = (state, action) => {
     case "WATCH_LATER":
       return { ...state, watchLater: action.payload };
 
->>>>>>> Stashed changes
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }

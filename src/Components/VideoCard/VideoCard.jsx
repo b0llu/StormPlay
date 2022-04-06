@@ -1,7 +1,4 @@
 import { useParams, Link, useLocation } from "react-router-dom";
-<<<<<<< Updated upstream
-import { usePlaylistContext, useAuthContext, useReducerContext } from "Context";
-=======
 import {
   usePlaylistContext,
   useAuthContext,
@@ -9,7 +6,6 @@ import {
   useLikeContext,
   useWatchLaterContext,
 } from "Context";
->>>>>>> Stashed changes
 import "./VideoCard.css";
 import { useHistoryContext } from "Context/History.context";
 
@@ -18,12 +14,9 @@ export const VideoCard = ({ video }) => {
   const { playlistId } = useParams();
   const { userState } = useAuthContext();
   const { addToHistory, removeFromHistory } = useHistoryContext();
-<<<<<<< Updated upstream
-=======
   const { removeFromLiked } = useLikeContext();
   const { addToWatchLater, removeFromWatchLater } = useWatchLaterContext();
   const { watchLater } = useReducerContext();
->>>>>>> Stashed changes
   const location = useLocation();
 
   return (
