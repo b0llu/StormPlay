@@ -1,5 +1,10 @@
 import { useParams, Link, useLocation } from "react-router-dom";
-import { usePlaylistContext, useAuthContext, useReducerContext } from "Context";
+import {
+  usePlaylistContext,
+  useAuthContext,
+  useReducerContext,
+  useLikeContext,
+} from "Context";
 import "./VideoCard.css";
 import { useHistoryContext } from "Context/History.context";
 
@@ -8,6 +13,7 @@ export const VideoCard = ({ video }) => {
   const { playlistId } = useParams();
   const { userState } = useAuthContext();
   const { addToHistory, removeFromHistory } = useHistoryContext();
+  const { removeFromLiked } = useLikeContext();
   const location = useLocation();
 
   return (
@@ -42,7 +48,9 @@ export const VideoCard = ({ video }) => {
         <div className="video-text">
           <span className="video-name">{video.shortTitle}</span>
           <span className="video-creator-name">{video.creator}</span>
-          {playlistId || location.pathname.includes("/history") ? (
+          {playlistId ||
+          location.pathname.includes("/history") ||
+          location.pathname.includes("/liked") ? (
             <div>
               <span className="video-creator-name">
                 {video.views} | {video.publishDate}
@@ -60,6 +68,16 @@ export const VideoCard = ({ video }) => {
                   <span
                     onClick={() => {
                       removeFromHistory(video._id);
+                    }}
+                    className="material-icons"
+                  >
+                    delete
+                  </span>
+                )}
+                {location.pathname === "/liked" && (
+                  <span
+                    onClick={() => {
+                      removeFromLiked(video._id);
                     }}
                     className="material-icons"
                   >

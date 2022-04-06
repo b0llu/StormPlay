@@ -30,7 +30,7 @@ export const Sidebar = () => {
           <span className="material-icons">watch_later</span>
         </NavLink>
         <NavLink
-          to="/likedvideos"
+          to="/liked"
           className={({ isActive }) => {
             return isActive ? "active" : "";
           }}
