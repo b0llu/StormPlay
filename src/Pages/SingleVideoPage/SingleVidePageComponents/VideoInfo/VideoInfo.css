@@ -53,6 +53,10 @@
   margin-left: 5px;
 }
 
+.btn-container .active {
+  color: var(--primary-color);
+}
+
 @media screen and (max-width: 850px) {
   .video-views {
     flex-direction: column;

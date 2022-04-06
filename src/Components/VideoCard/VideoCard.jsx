@@ -62,7 +62,9 @@ export const VideoCard = ({ video }) => {
         <div className="video-text">
           <span className="video-name">{video.shortTitle}</span>
           <span className="video-creator-name">{video.creator}</span>
-          {playlistId || location.pathname.includes("/history") ? (
+          {playlistId ||
+          location.pathname.includes("/history") ||
+          location.pathname.includes("/liked") ? (
             <div>
               <span className="video-creator-name">
                 {video.views} | {video.publishDate}
@@ -80,6 +82,16 @@ export const VideoCard = ({ video }) => {
                   <span
                     onClick={() => {
                       removeFromHistory(video._id);
+                    }}
+                    className="material-icons"
+                  >
+                    delete
+                  </span>
+                )}
+                {location.pathname === "/liked" && (
+                  <span
+                    onClick={() => {
+                      removeFromLiked(video._id);
                     }}
                     className="material-icons"
                   >
