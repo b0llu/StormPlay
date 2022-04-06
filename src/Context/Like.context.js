@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AlertToast, SuccessToast } from "Components";
 import { createContext, useContext } from "react";
 import { useReducerContext } from "./Reducer.context";
 
@@ -16,6 +17,7 @@ const LikeProvider = ({ children }) => {
         { headers: { authorization: encodedToken } }
       );
       if (response.status === 201) {
+        SuccessToast("Added To Liked Videos");
         dispatch({ type: "LIKED", payload: response.data.likes });
       }
     } catch (error) {
@@ -29,6 +31,7 @@ const LikeProvider = ({ children }) => {
         headers: { authorization: encodedToken },
       });
       if (response.status === 200) {
+        AlertToast("Removed From Liked Videos");
         dispatch({ type: "LIKED", payload: response.data.likes });
       }
     } catch (error) {
