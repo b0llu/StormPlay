@@ -22,6 +22,10 @@ export const Reducer = (state, action) => {
     case "HISTORY":
       return { ...state, history: action.payload };
 
+    // storing likes
+    case 'LIKED':
+    return {...state, liked: action.payload}
+    
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }

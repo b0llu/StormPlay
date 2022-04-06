@@ -10,3 +10,4 @@ export { IndividualPlaylistPage } from "./IndividualPlaylistPage/IndividualPlayl
 export { TrendingPage } from "./TrendingPage/TrendingPage";
 export { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";
 export { HistoryPage } from "./HistoryPage/HistoryPage";
+export { LikedPage } from "./LikedPage/LikedPage";
