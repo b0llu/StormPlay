@@ -9,3 +9,4 @@ export {
 export { IndividualPlaylistPage } from "./IndividualPlaylistPage/IndividualPlaylistPage";
 export { TrendingPage } from "./TrendingPage/TrendingPage";
 export { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";
+export { HistoryPage } from "./HistoryPage/HistoryPage";

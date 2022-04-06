@@ -11,6 +11,7 @@ import {
 } from "Components";
 import {
   AuthContainer,
+  HistoryPage,
   IndividualPlaylistPage,
   LandingPage,
   ListingPage,
@@ -37,6 +38,7 @@ function App() {
         <Route path="/videos" element={<ListingPage />} />
         <Route path="/videos/:videoId" element={<SingleVideoPage />} />
         <Route path="/trending" element={<TrendingPage />} />
+        <Route path="/history" element={<HistoryPage />} />
 
         <Route element={<RequireAuth />}>
           <Route path="/playlist" element={<PlaylistPage />} />

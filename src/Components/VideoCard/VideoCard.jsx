@@ -1,17 +1,21 @@
-import { useParams, Link } from "react-router-dom";
-import { usePlaylistContext, useAuthContext } from "Context";
+import { useParams, Link, useLocation } from "react-router-dom";
+import { usePlaylistContext, useAuthContext, useReducerContext } from "Context";
 import "./VideoCard.css";
+import { useHistoryContext } from "Context/History.context";
 
 export const VideoCard = ({ video }) => {
   const { setPlaylistModal, removeVideo } = usePlaylistContext();
   const { playlistId } = useParams();
   const { userState } = useAuthContext();
+  const { addToHistory, removeFromHistory } = useHistoryContext();
+  const location = useLocation();
 
   return (
     <div key={video._id} className="video-card">
       <div className="for-positioning">
         <Link to={`/videos/${video._id}`}>
           <img
+            onClick={() => addToHistory(video)}
             className="rsp-img"
             src={video.thumbnail}
             alt="video-thumbnail"
@@ -34,22 +38,34 @@ export const VideoCard = ({ video }) => {
         )}
       </div>
       <div className="video-info">
-        <img className="creator-img" src={video.creatorThumbnail} />
+        {/* <img loading="lazy" className="creator-img" src={video.creatorThumbnail} /> */}
         <div className="video-text">
           <span className="video-name">{video.shortTitle}</span>
           <span className="video-creator-name">{video.creator}</span>
-          {playlistId ? (
+          {playlistId || location.pathname.includes("/history") ? (
             <div>
               <span className="video-creator-name">
                 {video.views} | {video.publishDate}
-                <span
-                  onClick={() => {
-                    -removeVideo(playlistId, video._id);
-                  }}
-                  className="material-icons"
-                >
-                  delete
-                </span>
+                {playlistId && (
+                  <span
+                    onClick={() => {
+                      removeVideo(playlistId, video._id);
+                    }}
+                    className="material-icons"
+                  >
+                    delete
+                  </span>
+                )}
+                {location.pathname === "/history" && (
+                  <span
+                    onClick={() => {
+                      removeFromHistory(video._id);
+                    }}
+                    className="material-icons"
+                  >
+                    delete
+                  </span>
+                )}
               </span>
             </div>
           ) : (
