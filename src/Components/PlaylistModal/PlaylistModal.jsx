@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { usePlaylistContext } from "Context";
+import {
+  usePlaylistContext,
+  useReducerContext,
+  useWatchLaterContext,
+} from "Context";
 import "./PlaylistModal.css";
 
 export const PlaylistModal = () => {
@@ -11,6 +15,8 @@ export const PlaylistModal = () => {
     addVideo,
     removeVideo,
   } = usePlaylistContext();
+  const { watchLater } = useReducerContext();
+  const { addToWatchLater, removeFromWatchLater } = useWatchLaterContext();
   const [playlistDetails, setPlaylistDetails] = useState({
     title: "",
     description: "",
@@ -28,37 +34,57 @@ export const PlaylistModal = () => {
             close
           </span>
         </div>
-        {playlists.length !== 0 && (
-          <div className="available-playlists">
-            {playlists.map((playlist) => {
-              return (
-                <label key={playlist._id}>
-                  <input
-                    checked={
+        <div className="available-playlists">
+          <label>
+            <input
+              checked={
+                watchLater.findIndex(
+                  (v) => v._id === playlistModal.video._id
+                ) !== -1
+              }
+              type="checkbox"
+              onChange={() => {
+                if (
+                  watchLater.findIndex(
+                    (v) => v._id === playlistModal.video._id
+                  ) !== -1
+                ) {
+                  removeFromWatchLater(playlistModal.video._id);
+                } else {
+                  addToWatchLater(playlistModal.video);
+                }
+              }}
+            />
+            Watch Later
+          </label>
+          {playlists.map((playlist) => {
+            return (
+              <label key={playlist._id}>
+                <input
+                  checked={
+                    playlist.videos.findIndex(
+                      (v) => v._id === playlistModal.video._id
+                    ) !== -1
+                  }
+                  value={playlist._id}
+                  type="checkbox"
+                  onChange={(e) => {
+                    if (
                       playlist.videos.findIndex(
                         (v) => v._id === playlistModal.video._id
                       ) !== -1
+                    ) {
+                      removeVideo(e.target.value);
+                    } else {
+                      addVideo(e.target.value);
                     }
-                    value={playlist._id}
-                    type="checkbox"
-                    onChange={(e) => {
-                      if (
-                        playlist.videos.findIndex(
-                          (v) => v._id === playlistModal.video._id
-                        ) !== -1
-                      ) {
-                        removeVideo(e.target.value);
-                      } else {
-                        addVideo(e.target.value);
-                      }
-                    }}
-                  />
-                  {playlist.title}
-                </label>
-              );
-            })}
-          </div>
-        )}
+                  }}
+                />
+                {playlist.title}
+              </label>
+            );
+          })}
+        </div>
         <div className="modal-input">
           <input
             onChange={(e) =>

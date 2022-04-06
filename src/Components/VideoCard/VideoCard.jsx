@@ -1,5 +1,15 @@
 import { useParams, Link, useLocation } from "react-router-dom";
+<<<<<<< Updated upstream
 import { usePlaylistContext, useAuthContext, useReducerContext } from "Context";
+=======
+import {
+  usePlaylistContext,
+  useAuthContext,
+  useReducerContext,
+  useLikeContext,
+  useWatchLaterContext,
+} from "Context";
+>>>>>>> Stashed changes
 import "./VideoCard.css";
 import { useHistoryContext } from "Context/History.context";
 
@@ -8,6 +18,12 @@ export const VideoCard = ({ video }) => {
   const { playlistId } = useParams();
   const { userState } = useAuthContext();
   const { addToHistory, removeFromHistory } = useHistoryContext();
+<<<<<<< Updated upstream
+=======
+  const { removeFromLiked } = useLikeContext();
+  const { addToWatchLater, removeFromWatchLater } = useWatchLaterContext();
+  const { watchLater } = useReducerContext();
+>>>>>>> Stashed changes
   const location = useLocation();
 
   return (
@@ -21,7 +37,18 @@ export const VideoCard = ({ video }) => {
             alt="video-thumbnail"
           />
         </Link>
-        <span className="material-icons-outlined video-watchLater">
+        <span
+          onClick={() => {
+            if (watchLater.findIndex((v) => v._id === video._id) !== -1) {
+              removeFromWatchLater(video._id);
+            } else {
+              addToWatchLater(video);
+            }
+          }}
+          className={`material-icons-outlined video-watchLater ${
+            watchLater.findIndex((v) => v._id === video._id) !== -1 && "active"
+          }`}
+        >
           watch_later
         </span>
         {Object.keys(userState).length === 0 ? (
