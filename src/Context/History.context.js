@@ -9,23 +9,25 @@ const HistoryProvider = ({ children }) => {
   const { dispatch, history } = useReducerContext();
 
   const addToHistory = async (video) => {
-    dispatch({ type: "LOADING" });
-    if (history.some((v) => v._id === video._id)) {
-      dispatch({ type: "HISTORY", payload: history });
+    if (encodedToken) {
       dispatch({ type: "LOADING" });
-    } else {
-      try {
-        const response = await axios.post(
-          "/api/user/history",
-          { video },
-          { headers: { authorization: encodedToken } }
-        );
-        if (response.status === 201) {
-          dispatch({ type: "HISTORY", payload: response.data.history });
-          dispatch({ type: "LOADING" });
+      if (history.some((v) => v._id === video._id)) {
+        dispatch({ type: "HISTORY", payload: history });
+        dispatch({ type: "LOADING" });
+      } else {
+        try {
+          const response = await axios.post(
+            "/api/user/history",
+            { video },
+            { headers: { authorization: encodedToken } }
+          );
+          if (response.status === 201) {
+            dispatch({ type: "HISTORY", payload: response.data.history });
+            dispatch({ type: "LOADING" });
+          }
+        } catch (error) {
+          console.log(error);
         }
-      } catch (error) {
-        console.log(error);
       }
     }
   };
@@ -37,8 +39,8 @@ const HistoryProvider = ({ children }) => {
         headers: { authorization: encodedToken },
       });
       if (response.status === 200) {
-          dispatch({ type: "HISTORY", payload: response.data.history });
-          dispatch({ type: "LOADING" });
+        dispatch({ type: "HISTORY", payload: response.data.history });
+        dispatch({ type: "LOADING" });
       }
     } catch (error) {
       console.log(error);
@@ -46,19 +48,19 @@ const HistoryProvider = ({ children }) => {
   };
 
   const removeHistory = async () => {
-      dispatch({ type: "LOADING" });
-      try {
-          const response = await axios.delete('/api/user/history/all', {
-            headers: { authorization: encodedToken },
-          });
-          if (response.status === 200) {
-            dispatch({ type: "HISTORY", payload: response.data.history });
-            dispatch({ type: "LOADING" });
-          }
-      } catch (error) {
-          console.log(error)
+    dispatch({ type: "LOADING" });
+    try {
+      const response = await axios.delete("/api/user/history/all", {
+        headers: { authorization: encodedToken },
+      });
+      if (response.status === 200) {
+        dispatch({ type: "HISTORY", payload: response.data.history });
+        dispatch({ type: "LOADING" });
       }
-  }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <HistoryContext.Provider
       value={{ addToHistory, removeFromHistory, removeHistory }}

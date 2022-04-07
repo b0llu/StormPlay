@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import {
   useAuthContext,
   useLikeContext,
@@ -8,6 +8,7 @@ import {
 import "./VideoInfo.css";
 
 export const VideoInfo = () => {
+  const location = useLocation();
   const { videoId } = useParams();
   const { videos, liked } = useReducerContext();
   const { userState } = useAuthContext();
@@ -25,7 +26,14 @@ export const VideoInfo = () => {
               {video.views} | {video.publishDate}
             </h2>
             <div className="btn-container">
-              {liked.some((v) => v._id === video._id) ? (
+              {Object.keys(userState).length === 0 ? (
+                <Link state={{ from: location }} to="/login">
+                  <div className="like">
+                    <span className="material-icons">thumb_up_alt</span>
+                    <span className="text">Like</span>
+                  </div>
+                </Link>
+              ) : liked.some((v) => v._id === video._id) ? (
                 <div
                   onClick={() => removeFromLiked(video._id)}
                   className="like active"
@@ -39,13 +47,8 @@ export const VideoInfo = () => {
                   <span className="text">Like</span>
                 </div>
               )}
-              <div className="watch">
-                <span className="material-icons">watch_later</span>
-                <span className="text">Watch Later</span>
-              </div>
-
               {Object.keys(userState).length === 0 ? (
-                <Link to="/login">
+                <Link state={{ from: location }} to="/login">
                   <div className="add-to-playlist">
                     <span className="material-icons">queue</span>
                     <span className="text">Add to Playlist</span>

@@ -14,6 +14,7 @@ export const ListingPage = () => {
 
   useEffect(() => {
     dispatch({ type: "LOADING" }),
+      dispatch({ type: "RESET_FOR_SEARCH" }),
       (async function () {
         try {
           const response = await axios.get("/api/videos");

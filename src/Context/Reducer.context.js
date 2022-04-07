@@ -4,18 +4,29 @@ import { Reducer } from "Reducer/Reducer";
 const ReducerContext = createContext();
 
 const ReducerProvider = ({ children }) => {
-  const [{ loading, videos, history, liked, watchLater }, dispatch] =
-    useReducer(Reducer, {
-      loading: false,
-      videos: [],
-      history: [],
-      liked: [],
-      watchLater: [],
-    });
+  const [
+    { loading, videos, history, liked, watchLater, searchTerm },
+    dispatch,
+  ] = useReducer(Reducer, {
+    loading: false,
+    videos: [],
+    history: [],
+    liked: [],
+    watchLater: [],
+    searchTerm: "",
+  });
 
   return (
     <ReducerContext.Provider
-      value={{ loading, videos, history, liked, watchLater, dispatch }}
+      value={{
+        loading,
+        videos,
+        history,
+        liked,
+        watchLater,
+        searchTerm,
+        dispatch,
+      }}
     >
       {children}
     </ReducerContext.Provider>
