@@ -11,7 +11,7 @@ export const Sidebar = () => {
             return isActive ? "active" : "";
           }}
         >
-          <span className="material-icons">explore</span>
+          <span className="material-icons-outlined">explore</span>
         </NavLink>
         <NavLink
           to="/trending"
@@ -19,7 +19,7 @@ export const Sidebar = () => {
             return isActive ? "active" : "";
           }}
         >
-          <span className="material-icons">trending_up</span>
+          <span className="material-icons-outlined">trending_up</span>
         </NavLink>
         <NavLink
           to="/watchlater"
@@ -27,7 +27,7 @@ export const Sidebar = () => {
             return isActive ? "active" : "";
           }}
         >
-          <span className="material-icons">watch_later</span>
+          <span className="material-icons-outlined">watch_later</span>
         </NavLink>
         <NavLink
           to="/liked"
@@ -35,7 +35,7 @@ export const Sidebar = () => {
             return isActive ? "active" : "";
           }}
         >
-          <span className="material-icons">thumb_up</span>
+          <span className="material-icons-outlined">thumb_up</span>
         </NavLink>
         <NavLink
           to="/playlist"

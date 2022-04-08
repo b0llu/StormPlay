@@ -11,6 +11,7 @@ import {
 } from "Components";
 import {
   AuthContainer,
+  DashboardPage,
   HistoryPage,
   IndividualPlaylistPage,
   LandingPage,
@@ -50,6 +51,7 @@ function App() {
           <Route path="/liked" element={<LikedPage />} />
           <Route path="/watchlater" element={<WatchLaterPage />} />
           <Route path="/history" element={<HistoryPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
         </Route>
 
         <Route element={<RestrictAuth />}>
