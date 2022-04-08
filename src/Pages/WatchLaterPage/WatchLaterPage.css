@@ -1,0 +1,18 @@
+.watch-later-header {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.watch-later-header h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--content-color);
+  font-weight: 500;
+}
+
+.watch-later-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

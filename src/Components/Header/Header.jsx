@@ -1,7 +1,7 @@
 import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
 import { useThemeContext } from "Context/Theme.context";
-import { useAuthContext } from "Context";
+import { useAuthContext, useReducerContext } from "Context";
 
 export const Header = () => {
   const encodedToken = localStorage.getItem("StormPlayToken");
@@ -9,6 +9,7 @@ export const Header = () => {
   const location = useLocation();
   const { theme, toggleLightDarkTheme } = useThemeContext();
   const { signout } = useAuthContext();
+  const { dispatch, searchTerm } = useReducerContext();
 
   return (
     <nav>
@@ -17,7 +18,15 @@ export const Header = () => {
           <i className="fas fa-bolt"></i> StormPlay
         </Link>
         {location.pathname === "/videos" && (
-          <input className="header-input" placeholder="Search" type="text" />
+          <input
+            onChange={(e) =>
+              dispatch({ type: "SEARCH_FILTER", payload: e.target.value })
+            }
+            value={searchTerm}
+            className="header-input"
+            placeholder="Search"
+            type="text"
+          />
         )}
         <div className="margin-left-auto">
           <div className="icon-container">
@@ -41,7 +50,15 @@ export const Header = () => {
           </div>
         </div>
         {location.pathname === "/videos" && (
-          <input className="mobile-input" type="text" placeholder="Search" />
+          <input
+            onChange={(e) =>
+              dispatch({ type: "SEARCH_FILTER", payload: e.target.value })
+            }
+            value={searchTerm}
+            className="mobile-input"
+            type="text"
+            placeholder="Search"
+          />
         )}
       </div>
     </nav>

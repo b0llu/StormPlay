@@ -1,8 +1,6 @@
-import axios from "axios";
+import { useReducerContext } from "Context";
 
 export const Reducer = (state, action) => {
-  const encodedToken = localStorage.getItem("StormPlayToken");
-
   switch (action.type) {
     // loading case
     case "LOADING":
@@ -23,9 +21,24 @@ export const Reducer = (state, action) => {
       return { ...state, history: action.payload };
 
     // storing likes
-    case 'LIKED':
-    return {...state, liked: action.payload}
-    
+    case "LIKED":
+      return { ...state, liked: action.payload };
+
+    // storing watch later
+    case "WATCH_LATER":
+      return { ...state, watchLater: action.payload };
+
+    // search filter
+    case "SEARCH_FILTER":
+      return { ...state, searchTerm: action.payload };
+
+    // reset for search
+    case "RESET_FOR_SEARCH":
+      return {
+        ...state,
+        searchTerm: "",
+      };
+
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }

@@ -21,6 +21,7 @@ import {
   SignupBox,
   SingleVideoPage,
   TrendingPage,
+  WatchLaterPage,
 } from "Pages";
 
 function App() {
@@ -39,7 +40,6 @@ function App() {
         <Route path="/videos" element={<ListingPage />} />
         <Route path="/videos/:videoId" element={<SingleVideoPage />} />
         <Route path="/trending" element={<TrendingPage />} />
-        <Route path="/history" element={<HistoryPage />} />
 
         <Route element={<RequireAuth />}>
           <Route path="/playlist" element={<PlaylistPage />} />
@@ -48,6 +48,8 @@ function App() {
             element={<IndividualPlaylistPage />}
           />
           <Route path="/liked" element={<LikedPage />} />
+          <Route path="/watchlater" element={<WatchLaterPage />} />
+          <Route path="/history" element={<HistoryPage />} />
         </Route>
 
         <Route element={<RestrictAuth />}>

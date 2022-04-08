@@ -4,6 +4,7 @@ import {
   useAuthContext,
   useReducerContext,
   useLikeContext,
+  useWatchLaterContext,
 } from "Context";
 import "./VideoCard.css";
 import { useHistoryContext } from "Context/History.context";
@@ -14,12 +15,14 @@ export const VideoCard = ({ video }) => {
   const { userState } = useAuthContext();
   const { addToHistory, removeFromHistory } = useHistoryContext();
   const { removeFromLiked } = useLikeContext();
+  const { addToWatchLater, removeFromWatchLater } = useWatchLaterContext();
+  const { watchLater } = useReducerContext();
   const location = useLocation();
 
   return (
     <div key={video._id} className="video-card">
       <div className="for-positioning">
-        <Link to={`/videos/${video._id}`}>
+        <Link state={{ from: location }} to={`/videos/${video._id}`}>
           <img
             onClick={() => addToHistory(video)}
             className="rsp-img"
@@ -27,11 +30,29 @@ export const VideoCard = ({ video }) => {
             alt="video-thumbnail"
           />
         </Link>
-        <span className="material-icons-outlined video-watchLater">
-          watch_later
-        </span>
         {Object.keys(userState).length === 0 ? (
-          <Link to="/login">
+          <Link state={{ from: location }} to="/login">
+            <span className="material-icons-outlined video-watchLater">
+              watch_later
+            </span>
+          </Link>
+        ) : watchLater.findIndex((v) => v._id === video._id) !== -1 ? (
+          <span
+            onClick={() => removeFromWatchLater(video._id)}
+            className="material-icons video-watchLater  active"
+          >
+            watch_later
+          </span>
+        ) : (
+          <span
+            onClick={() => addToWatchLater(video)}
+            className="material-icons-outlined video-watchLater"
+          >
+            watch_later
+          </span>
+        )}
+        {Object.keys(userState).length === 0 ? (
+          <Link state={{ from: location }} to="/login">
             <span className="material-icons playlist">queue</span>
           </Link>
         ) : (
@@ -44,10 +65,16 @@ export const VideoCard = ({ video }) => {
         )}
       </div>
       <div className="video-info">
-        {/* <img loading="lazy" className="creator-img" src={video.creatorThumbnail} /> */}
+        <img
+          loading="lazy"
+          className="creator-img"
+          src={video.creatorThumbnail}
+        />
         <div className="video-text">
-          <span className="video-name">{video.shortTitle}</span>
-          <span className="video-creator-name">{video.creator}</span>
+          <Link state={{ from: location }} to={`/videos/${video._id}`}>
+            <span className="video-name">{video.shortTitle}</span>
+            <span className="video-creator-name">{video.creator}</span>
+          </Link>
           {playlistId ||
           location.pathname.includes("/history") ||
           location.pathname.includes("/liked") ? (

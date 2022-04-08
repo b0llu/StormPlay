@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader, VideoCard } from "Components";
 import { useReducerContext } from "Context/Reducer.context";
+import { useFunction } from "Hook/useFunction";
 import "./VideoListing.css";
 
 export const VideoListing = ({ category }) => {
-  const { loading, videos } = useReducerContext();
+  const { loading } = useReducerContext();
+  const { searchFilteredVideos } = useFunction();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +18,7 @@ export const VideoListing = ({ category }) => {
     <Loader />
   ) : (
     <div className="video-listing-container">
-      {videos
+      {searchFilteredVideos
         .filter((video) => (category ? video.category === category : video))
         .map((video) => {
           return <VideoCard key={video._id} video={video} />;

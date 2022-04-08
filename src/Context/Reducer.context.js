@@ -4,16 +4,29 @@ import { Reducer } from "Reducer/Reducer";
 const ReducerContext = createContext();
 
 const ReducerProvider = ({ children }) => {
-  const [{ loading, videos, history, liked }, dispatch] = useReducer(Reducer, {
+  const [
+    { loading, videos, history, liked, watchLater, searchTerm },
+    dispatch,
+  ] = useReducer(Reducer, {
     loading: false,
     videos: [],
     history: [],
     liked: [],
+    watchLater: [],
+    searchTerm: "",
   });
 
   return (
     <ReducerContext.Provider
-      value={{ loading, videos, history, liked, dispatch }}
+      value={{
+        loading,
+        videos,
+        history,
+        liked,
+        watchLater,
+        searchTerm,
+        dispatch,
+      }}
     >
       {children}
     </ReducerContext.Provider>

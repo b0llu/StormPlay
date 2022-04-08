@@ -3,48 +3,50 @@ import { AlertToast, SuccessToast } from "Components";
 import { createContext, useContext } from "react";
 import { useReducerContext } from "./Reducer.context";
 
-const LikeContext = createContext();
+const WatchLaterContext = createContext();
 
-const LikeProvider = ({ children }) => {
+const WatchLaterProvider = ({ children }) => {
   const encodedToken = localStorage.getItem("StormPlayToken");
   const { dispatch } = useReducerContext();
 
-  const addToLiked = async (video) => {
+  const addToWatchLater = async (video) => {
     try {
       const response = await axios.post(
-        "/api/user/likes",
+        "/api/user/watchlater",
         { video },
         { headers: { authorization: encodedToken } }
       );
       if (response.status === 201) {
-        SuccessToast("Added To Liked Videos");
-        dispatch({ type: "LIKED", payload: response.data.likes });
+        SuccessToast("Added To Watch Later");
+        dispatch({ type: "WATCH_LATER", payload: response.data.watchlater });
       }
     } catch (error) {
       AlertToast(`${error.response.data.errors}`);
     }
   };
 
-  const removeFromLiked = async (id) => {
+  const removeFromWatchLater = async (id) => {
     try {
-      const response = await axios.delete(`/api/user/likes/${id}`, {
+      const response = await axios.delete(`/api/user/watchlater/${id}`, {
         headers: { authorization: encodedToken },
       });
       if (response.status === 200) {
-        AlertToast("Removed From Liked Videos");
-        dispatch({ type: "LIKED", payload: response.data.likes });
+        AlertToast("Removed From Watch Later");
+        dispatch({ type: "WATCH_LATER", payload: response.data.watchlater });
       }
     } catch (error) {
       AlertToast(`${error.response.data.errors}`);
     }
   };
   return (
-    <LikeContext.Provider value={{ addToLiked, removeFromLiked }}>
+    <WatchLaterContext.Provider
+      value={{ addToWatchLater, removeFromWatchLater }}
+    >
       {children}
-    </LikeContext.Provider>
+    </WatchLaterContext.Provider>
   );
 };
 
-const useLikeContext = () => useContext(LikeContext);
+const useWatchLaterContext = () => useContext(WatchLaterContext);
 
-export { useLikeContext, LikeProvider };
+export { useWatchLaterContext, WatchLaterProvider };
