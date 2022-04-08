@@ -76,7 +76,7 @@ const AuthProvider = ({ children }) => {
             setUserState(response.data.user);
           }
         } catch (error) {
-          console.log(error);
+          AlertToast(`${error.response.data.errors}`);
         }
       }
     })();

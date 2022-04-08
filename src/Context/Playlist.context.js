@@ -32,7 +32,7 @@ const PlaylistProvider = ({ children }) => {
 
       if (playlistResponse.status === 201) {
         // checking if add to playlist was clicked on video or not
-        SuccessToast("Playlist Created")
+        SuccessToast("Playlist Created");
         if (Object.keys(playlistModal.video).length === 0) {
           setPlaylists(playlistResponse.data.playlists);
         } else {
@@ -80,12 +80,12 @@ const PlaylistProvider = ({ children }) => {
               }
             }
           } catch (error) {
-            console.log(error);
+            AlertToast(`${error.response.data.errors}`);
           }
         }
       }
     } catch (error) {
-      console.log(error);
+      AlertToast(`${error.response.data.errors}`);
     }
   };
 
@@ -98,10 +98,10 @@ const PlaylistProvider = ({ children }) => {
       });
       if (response.status === 200) {
         setPlaylists(response.data.playlists);
-        AlertToast('Playlist Deleted')
+        AlertToast("Playlist Deleted");
       }
     } catch (error) {
-      console.log(error);
+      AlertToast(`${error.response.data.errors}`);
     }
   };
 
@@ -118,15 +118,15 @@ const PlaylistProvider = ({ children }) => {
             p._id === response.data.playlist._id ? response.data.playlist : p
           )
         );
-        SuccessToast("Video Added To Playlist")
+        SuccessToast("Video Added To Playlist");
       }
     } catch (error) {
-      console.log(error);
+      AlertToast(`${error.response.data.errors}`);
     }
   };
 
   const removeVideo = async (playlistId, videoId) => {
-    if(!videoId) {
+    if (!videoId) {
       try {
         const response = await axios.delete(
           `/api/user/playlists/${playlistId}/${playlistModal.video._id}`,
@@ -138,10 +138,10 @@ const PlaylistProvider = ({ children }) => {
               p._id === response.data.playlist._id ? response.data.playlist : p
             )
           );
-          AlertToast("Video Removed From Playlist")
+          AlertToast("Video Removed From Playlist");
         }
       } catch (error) {
-        console.log(error);
+        AlertToast(`${error.response.data.errors}`);
       }
     } else {
       try {
@@ -158,7 +158,7 @@ const PlaylistProvider = ({ children }) => {
           AlertToast("Video Removed From Playlist");
         }
       } catch (error) {
-        console.log(error);
+        AlertToast(`${error.response.data.errors}`);
       }
     }
   };

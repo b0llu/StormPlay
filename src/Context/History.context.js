@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AlertToast } from "Components";
 import { createContext, useContext } from "react";
 import { useReducerContext } from "./Reducer.context";
 
@@ -26,7 +27,7 @@ const HistoryProvider = ({ children }) => {
             dispatch({ type: "LOADING" });
           }
         } catch (error) {
-          console.log(error);
+          AlertToast(`${error.response.data.errors}`);
         }
       }
     }
@@ -43,7 +44,7 @@ const HistoryProvider = ({ children }) => {
         dispatch({ type: "LOADING" });
       }
     } catch (error) {
-      console.log(error);
+      AlertToast(`${error.response.data.errors}`);
     }
   };
 
@@ -58,7 +59,7 @@ const HistoryProvider = ({ children }) => {
         dispatch({ type: "LOADING" });
       }
     } catch (error) {
-      console.log(error);
+      AlertToast(`${error.response.data.errors}`);
     }
   };
   return (

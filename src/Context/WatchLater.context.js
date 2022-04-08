@@ -21,7 +21,7 @@ const WatchLaterProvider = ({ children }) => {
         dispatch({ type: "WATCH_LATER", payload: response.data.watchlater });
       }
     } catch (error) {
-      console.log(error);
+      AlertToast(`${error.response.data.errors}`);
     }
   };
 
@@ -35,7 +35,7 @@ const WatchLaterProvider = ({ children }) => {
         dispatch({ type: "WATCH_LATER", payload: response.data.watchlater });
       }
     } catch (error) {
-      console.log(error);
+      AlertToast(`${error.response.data.errors}`);
     }
   };
   return (

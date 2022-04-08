@@ -21,7 +21,7 @@ const LikeProvider = ({ children }) => {
         dispatch({ type: "LIKED", payload: response.data.likes });
       }
     } catch (error) {
-      console.log(error);
+      AlertToast(`${error.response.data.errors}`);
     }
   };
 
@@ -35,7 +35,7 @@ const LikeProvider = ({ children }) => {
         dispatch({ type: "LIKED", payload: response.data.likes });
       }
     } catch (error) {
-      console.log(error);
+      AlertToast(`${error.response.data.errors}`);
     }
   };
   return (
