@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, Navigate, useLocation, useParams } from "react-router-dom";
 import {
   useAuthContext,
   useLikeContext,
@@ -27,7 +27,11 @@ export const VideoInfo = () => {
             </h2>
             <div className="btn-container">
               {Object.keys(userState).length === 0 ? (
-                <Link state={{ from: location }} to="/login">
+                <Link
+                  style={{ color: "var(--content-color)" }}
+                  state={{ from: location }}
+                  to="/login"
+                >
                   <div className="like">
                     <span className="material-icons">thumb_up_alt</span>
                     <span className="text">Like</span>
@@ -48,7 +52,11 @@ export const VideoInfo = () => {
                 </div>
               )}
               {Object.keys(userState).length === 0 ? (
-                <Link state={{ from: location }} to="/login">
+                <Link
+                  style={{ color: "var(--content-color)" }}
+                  state={{ from: location }}
+                  to="/login"
+                >
                   <div className="add-to-playlist">
                     <span className="material-icons">queue</span>
                     <span className="text">Add to Playlist</span>
