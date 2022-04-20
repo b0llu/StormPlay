@@ -10,7 +10,6 @@ li {
 
 .category-bar-container {
   background-color: var(--card-container-bg);
-
   box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.31);
 }
 
@@ -20,7 +19,8 @@ li {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  flex-wrap: wrap;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .categories li {
@@ -31,6 +31,7 @@ li {
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
+  display: inline-block;
 }
 
 .categories li:hover {
@@ -42,4 +43,19 @@ li {
 .categories li.active {
   background-color: var(--for-theme);
   color: var(--default-color);
+}
+
+@media screen and (max-width: 700px) {
+  .categories {
+    display: block;
+  }
+}
+
+.categories::-webkit-scrollbar {
+  height: 6px;
+}
+
+.categories::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
 }

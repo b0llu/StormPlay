@@ -31,9 +31,11 @@ export const Header = () => {
         <div className="margin-left-auto">
           <div className="icon-container">
             <p className="icon-color">{user}</p>
-            <div className="badge">
-              <i className="fa-solid fas fa-user icon-color"></i>
-            </div>
+            <Link state={{ from: location }} to="/dashboard">
+              <div className="badge">
+                <i className="fa-solid fas fa-user icon-color"></i>
+              </div>
+            </Link>
             <Link to="/">
               {encodedToken && (
                 <div onClick={signout} className="badge">

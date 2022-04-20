@@ -1,0 +1,24 @@
+.error-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    grid-area: contentarea;
+    margin-top: 5rem;
+}
+
+.error-page-header {
+    font-size: 4rem;
+    color: var(--content-color);
+    margin-bottom: 4rem;
+}
+
+.error-page-text {
+    font-size: 2rem;
+    color: var(--content-color);
+}
+
+.error-page-text span {
+    color: var(--primary-color);
+    font-weight: 500;
+}

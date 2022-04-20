@@ -169,6 +169,7 @@ const PlaylistProvider = ({ children }) => {
         playlistModal,
         setPlaylistModal,
         playlists,
+        setPlaylists,
         addVideoToPlaylist,
         removePlaylist,
         addVideo,

@@ -11,6 +11,8 @@ import {
 } from "Components";
 import {
   AuthContainer,
+  DashboardPage,
+  ErrorPage,
   HistoryPage,
   IndividualPlaylistPage,
   LandingPage,
@@ -50,6 +52,7 @@ function App() {
           <Route path="/liked" element={<LikedPage />} />
           <Route path="/watchlater" element={<WatchLaterPage />} />
           <Route path="/history" element={<HistoryPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
         </Route>
 
         <Route element={<RestrictAuth />}>
@@ -71,6 +74,7 @@ function App() {
           />
         </Route>
         <Route path="/mockman" element={<MockAPI />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </LandingContainer>
   );

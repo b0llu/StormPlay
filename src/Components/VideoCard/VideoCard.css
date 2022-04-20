@@ -1,3 +1,7 @@
+.video-text a {
+  color: var(--content-color);
+}
+
 .video-card {
   margin-top: 3rem;
   margin-bottom: 3rem;

@@ -5,6 +5,7 @@ import {
   useWatchLaterContext,
 } from "Context";
 import "./PlaylistModal.css";
+import { AlertToast } from "Components";
 
 export const PlaylistModal = () => {
   const {
@@ -35,30 +36,37 @@ export const PlaylistModal = () => {
           </span>
         </div>
         <div className="available-playlists">
-          <label>
-            <input
-              checked={
-                watchLater.findIndex(
-                  (v) => v._id === playlistModal.video._id
-                ) !== -1
-              }
-              type="checkbox"
-              onChange={() => {
-                if (
+          {Object.keys(playlistModal.video).length !== 0 ? (
+            <label>
+              <input
+                checked={
                   watchLater.findIndex(
                     (v) => v._id === playlistModal.video._id
                   ) !== -1
-                ) {
-                  removeFromWatchLater(playlistModal.video._id);
-                } else {
-                  addToWatchLater(playlistModal.video);
                 }
-              }}
-            />
-            Watch Later
-          </label>
+                type="checkbox"
+                onChange={() => {
+                  if (
+                    watchLater.findIndex(
+                      (v) => v._id === playlistModal.video._id
+                    ) !== -1
+                  ) {
+                    removeFromWatchLater(playlistModal.video._id);
+                  } else {
+                    addToWatchLater(playlistModal.video);
+                  }
+                }}
+              />
+              Watch Later
+            </label>
+          ) : (
+            <label onClick={() => AlertToast("No Video Selected")}>
+              <input checked={false} onChange={() => {}} type="checkbox" />
+              Watch Later
+            </label>
+          )}
           {playlists.map((playlist) => {
-            return (
+            return Object.keys(playlistModal.video).length !== 0 ? (
               <label key={playlist._id}>
                 <input
                   checked={
@@ -80,6 +88,14 @@ export const PlaylistModal = () => {
                     }
                   }}
                 />
+                {playlist.title}
+              </label>
+            ) : (
+              <label
+                onClick={() => AlertToast("No Video Selected")}
+                key={playlist._id}
+              >
+                <input checked={false} onChange={() => {}} type="checkbox" />
                 {playlist.title}
               </label>
             );

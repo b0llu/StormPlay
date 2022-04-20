@@ -1,6 +1,8 @@
 import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
 import { AlertToast, SuccessToast } from "Components";
+import { useReducerContext } from "./Reducer.context";
+import { usePlaylistContext } from "./Playlist.context";
 
 const AuthContext = createContext();
 
@@ -8,6 +10,8 @@ const AuthProvider = ({ children }) => {
   const encodedToken = localStorage.getItem("StormPlayToken");
   const [userState, setUserState] = useState({});
   const [effectTrigger, setEffectTrigger] = useState(false);
+  const { dispatch } = useReducerContext();
+  const { setPlaylists } = usePlaylistContext();
 
   const login = async (userDetails) => {
     try {
@@ -48,6 +52,10 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("StormPlayToken");
     localStorage.removeItem("StormPlayUser");
     setUserState([]);
+    dispatch({ type: "HISTORY", payload: [] });
+    dispatch({ type: "LIKED", payload: [] });
+    dispatch({ type: "WATCH_LATER", payload: [] });
+    setPlaylists([]);
   };
 
   const testLogger = async () => {
@@ -74,6 +82,13 @@ const AuthProvider = ({ children }) => {
           });
           if (response && response.data) {
             setUserState(response.data.user);
+            dispatch({ type: "HISTORY", payload: response.data.user.history });
+            dispatch({ type: "LIKED", payload: response.data.user.likes });
+            dispatch({
+              type: "WATCH_LATER",
+              payload: response.data.user.watchlater,
+            });
+            setPlaylists(response.data.user.playlists);
           }
         } catch (error) {
           AlertToast(`${error.response.data.errors}`);
