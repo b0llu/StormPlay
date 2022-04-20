@@ -12,6 +12,7 @@ import {
 import {
   AuthContainer,
   DashboardPage,
+  ErrorPage,
   HistoryPage,
   IndividualPlaylistPage,
   LandingPage,
@@ -73,6 +74,7 @@ function App() {
           />
         </Route>
         <Route path="/mockman" element={<MockAPI />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </LandingContainer>
   );

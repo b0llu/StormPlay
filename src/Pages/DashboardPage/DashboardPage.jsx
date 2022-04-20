@@ -34,7 +34,7 @@ export const DashboardPage = () => {
           </div>
           <div className="dashboard-section-details">
             <div className="profile-details">
-              {route === "profile" ? (
+              {route === "profile" && (
                 <>
                   <h2>Profile Details</h2>
                   <div className="txt-container">
@@ -48,7 +48,7 @@ export const DashboardPage = () => {
                     </div>
                   </div>
                 </>
-              ) : null}
+              )}
               {route === "settings" ? (
                 <>
                   <h2>Account Settings</h2>
