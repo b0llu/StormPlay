@@ -13,7 +13,7 @@ export const VideoCard = ({ video }) => {
   const { setPlaylistModal, removeVideo } = usePlaylistContext();
   const { playlistId } = useParams();
   const { userState } = useAuthContext();
-  const { addToHistory, removeFromHistory } = useHistoryContext();
+  const { removeFromHistory } = useHistoryContext();
   const { removeFromLiked } = useLikeContext();
   const { addToWatchLater, removeFromWatchLater } = useWatchLaterContext();
   const { watchLater } = useReducerContext();
@@ -24,7 +24,6 @@ export const VideoCard = ({ video }) => {
       <div className="for-positioning">
         <Link state={{ from: location }} to={`/videos/${video._id}`}>
           <img
-            onClick={() => addToHistory(video)}
             className="rsp-img"
             src={video.thumbnail}
             alt="video-thumbnail"
