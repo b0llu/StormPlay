@@ -11,10 +11,8 @@ const HistoryProvider = ({ children }) => {
 
   const addToHistory = async (video) => {
     if (encodedToken) {
-      dispatch({ type: "LOADING" });
       if (history.some((v) => v._id === video._id)) {
         dispatch({ type: "HISTORY", payload: history });
-        dispatch({ type: "LOADING" });
       } else {
         try {
           const response = await axios.post(
@@ -24,7 +22,6 @@ const HistoryProvider = ({ children }) => {
           );
           if (response.status === 201) {
             dispatch({ type: "HISTORY", payload: response.data.history });
-            dispatch({ type: "LOADING" });
           }
         } catch (error) {
           AlertToast(`${error.response.data.errors}`);
