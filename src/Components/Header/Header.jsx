@@ -4,11 +4,10 @@ import { useThemeContext } from "Context/Theme.context";
 import { useAuthContext, useReducerContext } from "Context";
 
 export const Header = () => {
-  const encodedToken = localStorage.getItem("StormPlayToken");
   const user = localStorage.getItem("StormPlayUser");
   const location = useLocation();
   const { theme, toggleLightDarkTheme } = useThemeContext();
-  const { signout } = useAuthContext();
+  const { signout, userState } = useAuthContext();
   const { dispatch, searchTerm } = useReducerContext();
 
   return (
@@ -30,14 +29,16 @@ export const Header = () => {
         )}
         <div className="margin-left-auto">
           <div className="icon-container">
-            <p className="icon-color">{user}</p>
+            {Object.keys(userState).length !== 0 && (
+              <p className="icon-color">Hey, {user}</p>
+            )}
             <Link state={{ from: location }} to="/dashboard">
               <div className="badge">
                 <i className="fa-solid fas fa-user icon-color"></i>
               </div>
             </Link>
             <Link to="/">
-              {encodedToken && (
+              {Object.keys(userState).length !== 0 && (
                 <div onClick={signout} className="badge">
                   <i className="fas fa-sign-out icon-color"></i>
                 </div>

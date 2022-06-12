@@ -90,9 +90,7 @@ const AuthProvider = ({ children }) => {
             });
             setPlaylists(response.data.user.playlists);
           }
-        } catch (error) {
-          AlertToast(`${error.response.data.errors}`);
-        }
+        } catch (error) {}
       }
     })();
   }, [effectTrigger]);
