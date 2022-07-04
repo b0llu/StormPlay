@@ -5,110 +5,6 @@
 
 export const videos = [
   {
-    _id: "2joA_S92p64",
-    thumbnail:
-      "https://i.ytimg.com/vi/2joA_S92p64/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA59XBgJGNBJfLOIbDpnl6qMcdFxQ",
-    shortTitle: "Gaming PC Parts Explained!",
-    title:
-      "Gaming PC Parts Explained! 😃 A Beginner's Guide To Gaming Computer Components!",
-    description:
-      "Ever Wondered What's In A Gaming PC? Here's PC Centric's complete beginner's guide to what's inside a gaming computer, with all gaming pc components explained!",
-    creator: "PC Centric",
-    creatorThumbnail:
-      "https://yt3.ggpht.com/ytc/AKedOLTCIi-aKJjs3I3IJWnsq-8Y4bDYr-PNVxe__WSmFg=s176-c-k-c0x00ffffff-no-rj-mo",
-    category: "Basics",
-    views: "1,277,942 views",
-    publishDate: "Feb 27, 2020",
-    subscribers: "501K subscribers",
-    trending: true,
-  },
-  {
-    _id: "-8LMML_EiMg",
-    thumbnail:
-      "https://i.ytimg.com/vi/-8LMML_EiMg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDY0ZFK66inxjwMLmFCS9Ve8j7apA",
-    shortTitle: "Mistakes that Beginners Make!",
-    title: "Common PC Building Mistakes that Beginners Make!",
-    description:
-      "Here are the most common PC Building mistakes I see when people are building their first PCs! Don't let these happen to you! ",
-    creator: "JayzTwoCents",
-    creatorThumbnail:
-      "https://yt3.ggpht.com/EAJTcRmRdv3plIT4zRJlyWRnf4cS_zVt6YVtSZ39hQ4ryApK0ZPLEi0YFKdW-eCy6X0CATq9=s176-c-k-c0x00ffffff-no-rj-mo",
-    category: "Basics",
-    views: "3,084,284 views",
-    publishDate: "Jan 23, 2021",
-    subscribers: "3.64M subscribers",
-    trending: false,
-  },
-  {
-    _id: "UdsaTRBZePw",
-    thumbnail:
-      "https://i.ytimg.com/vi/UdsaTRBZePw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBqU4-1DdrxTFqVIztHK7T4CVmWGQ",
-    shortTitle: "Here's where to save money!",
-    title:
-      "It's EASY to spend too much on PC parts... Here's where to save money!",
-    description:
-      "Don't overspend on your next PC build! Today we take a look at some common areas people tend to overspend and ways that you can save money on your next upgrade or build. ",
-    creator: "JayzTwoCents",
-    creatorThumbnail:
-      "https://yt3.ggpht.com/EAJTcRmRdv3plIT4zRJlyWRnf4cS_zVt6YVtSZ39hQ4ryApK0ZPLEi0YFKdW-eCy6X0CATq9=s176-c-k-c0x00ffffff-no-rj-mo",
-    category: "Basics",
-    views: "2,662,643 views",
-    publishDate: "Dec 16, 2020",
-    subscribers: "3.64M subscribers",
-    trending: false,
-  },
-  {
-    _id: "NYcZmwnWkdI",
-    thumbnail:
-      "https://i.ytimg.com/vi/NYcZmwnWkdI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC4rVW-ukVmDoaPSSi_uYABmTgjZQ",
-    shortTitle: "Save Money on a PC BUILD",
-    title: "How to Save Money on a PC BUILD | Buy PC Parts for Cheap [HINDI]",
-    description:
-      "In today's video, I will share some with you guys so that you can some money on your next gaming PC Build.",
-    creator: "PC Wale",
-    creatorThumbnail:
-      "https://yt3.ggpht.com/ytc/AKedOLT-bXiIX0ppL3kWkWZACLFM6DxgxDxuRLiZixG_mg=s48-c-k-c0x00ffffff-no-rj",
-    category: "Basics",
-    views: "26,152 views",
-    publishDate: "Jan 11, 2021",
-    subscribers: "54.9K subscribers",
-    trending: false,
-  },
-  {
-    _id: "PXaLc9AYIcg",
-    thumbnail:
-      "https://i.ytimg.com/vi/PXaLc9AYIcg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDgCcZjgAKhZbOBqgIQz72DOiucGA",
-    shortTitle: "How To Build A PC",
-    title: "How To Build A PC - Step by Step (Full Build Guide)",
-    description:
-      "A fully in-depth step by step PC build guide. Includes everything from installation of parts, installing Windows OS, installing drivers, XMP Profile setup, Windows settings + More!",
-    creator: "TechSource",
-    creatorThumbnail:
-      "https://yt3.ggpht.com/ytc/AKedOLRDCJXNd_hrpel3uDPX7Ojdi3v28Rk6wHCZvhs3=s48-c-k-c0x00ffffff-no-rj",
-    category: "Basics",
-    views: "7,537,846 views",
-    publishDate: "Apr 9, 2021",
-    subscribers: "3.35M subscribers",
-    trending: true,
-  },
-  {
-    _id: "OZaFqY8UF6I",
-    thumbnail:
-      "https://i.ytimg.com/vi/OZaFqY8UF6I/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBYsV-neHFBhIg8a4jEQrYhCipcfw",
-    shortTitle: "How To Build A Gaming PC",
-    title: "How To Build A Gaming PC - FULL Beginners Guide",
-    description:
-      "A Full in-depth build guide on building a PC with overclocking GPU and Ram, installation of Windows and Installing Drivers as well!",
-    creator: "TechSource",
-    creatorThumbnail:
-      "https://yt3.ggpht.com/ytc/AKedOLRDCJXNd_hrpel3uDPX7Ojdi3v28Rk6wHCZvhs3=s48-c-k-c0x00ffffff-no-rj",
-    category: "Basics",
-    views: "8,255,452 views",
-    publishDate: "Dec 23, 2017",
-    subscribers: "3.35M subscribers",
-    trending: true,
-  },
-  {
     _id: "uXIF32hhT8I",
     thumbnail:
       "https://i.ytimg.com/vi/uXIF32hhT8I/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZa_g_bEy7RV5E45hMEpa_2gbkVQ",
@@ -124,23 +20,6 @@ export const videos = [
     publishDate: "Dec 12, 2020",
     subscribers: "9.24K subscribers",
     trending: false,
-  },
-  {
-    _id: "7DVOQrs1N40",
-    thumbnail:
-      "https://i.ytimg.com/vi/7DVOQrs1N40/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCO8JcT7-2AF9TEPke9S27HRfMtIw",
-    shortTitle: "How to Build a PC for First Time",
-    title: "How to Build a PC for the First Time",
-    description:
-      "With zero experience in PC building, IGN's Amy is looking to build her very first gaming PC from scratch. She'll be showing every step (and mistake) as she goes, to help fellow PC beginners take the plunge! Sponsored by Asus.",
-    creator: "IGN",
-    creatorThumbnail:
-      "https://yt3.ggpht.com/H_---ano_f27DOCejDhUdBMtBcxcv32MoXmFKQc_mBcxYSH4HPZTGuBUdm7UgI5VlutMOVX2=s48-c-k-c0x00ffffff-no-rj",
-    category: "Basics",
-    views: "389,252 views",
-    publishDate: "Mar 5, 2021",
-    subscribers: "16.5M subscribers",
-    trending: true,
   },
   {
     _id: "ExxFxD4OSZ0",
@@ -194,6 +73,23 @@ export const videos = [
     trending: false,
   },
   {
+    _id: "OZaFqY8UF6I",
+    thumbnail:
+      "https://i.ytimg.com/vi/OZaFqY8UF6I/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBYsV-neHFBhIg8a4jEQrYhCipcfw",
+    shortTitle: "How To Build A Gaming PC",
+    title: "How To Build A Gaming PC - FULL Beginners Guide",
+    description:
+      "A Full in-depth build guide on building a PC with overclocking GPU and Ram, installation of Windows and Installing Drivers as well!",
+    creator: "TechSource",
+    creatorThumbnail:
+      "https://yt3.ggpht.com/ytc/AKedOLRDCJXNd_hrpel3uDPX7Ojdi3v28Rk6wHCZvhs3=s48-c-k-c0x00ffffff-no-rj",
+    category: "Basics",
+    views: "8,255,452 views",
+    publishDate: "Dec 23, 2017",
+    subscribers: "3.35M subscribers",
+    trending: true,
+  },
+  {
     _id: "WXpZD5uYfOo",
     thumbnail:
       "https://i.ytimg.com/vi/WXpZD5uYfOo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvOnSlYiEyJgyeqU5F-skygG0wGg",
@@ -209,6 +105,23 @@ export const videos = [
     publishDate: "Apr 20, 2017",
     subscribers: "2.81M subscribers",
     trending: false,
+  },
+  {
+    _id: "7DVOQrs1N40",
+    thumbnail:
+      "https://i.ytimg.com/vi/7DVOQrs1N40/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCO8JcT7-2AF9TEPke9S27HRfMtIw",
+    shortTitle: "How to Build a PC for First Time",
+    title: "How to Build a PC for the First Time",
+    description:
+      "With zero experience in PC building, IGN's Amy is looking to build her very first gaming PC from scratch. She'll be showing every step (and mistake) as she goes, to help fellow PC beginners take the plunge! Sponsored by Asus.",
+    creator: "IGN",
+    creatorThumbnail:
+      "https://yt3.ggpht.com/H_---ano_f27DOCejDhUdBMtBcxcv32MoXmFKQc_mBcxYSH4HPZTGuBUdm7UgI5VlutMOVX2=s48-c-k-c0x00ffffff-no-rj",
+    category: "Basics",
+    views: "389,252 views",
+    publishDate: "Mar 5, 2021",
+    subscribers: "16.5M subscribers",
+    trending: true,
   },
   {
     _id: "IbuKffs7wmg",
@@ -245,6 +158,24 @@ export const videos = [
     trending: true,
   },
   {
+    _id: "UdsaTRBZePw",
+    thumbnail:
+      "https://i.ytimg.com/vi/UdsaTRBZePw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBqU4-1DdrxTFqVIztHK7T4CVmWGQ",
+    shortTitle: "Here's where to save money!",
+    title:
+      "It's EASY to spend too much on PC parts... Here's where to save money!",
+    description:
+      "Don't overspend on your next PC build! Today we take a look at some common areas people tend to overspend and ways that you can save money on your next upgrade or build. ",
+    creator: "JayzTwoCents",
+    creatorThumbnail:
+      "https://yt3.ggpht.com/EAJTcRmRdv3plIT4zRJlyWRnf4cS_zVt6YVtSZ39hQ4ryApK0ZPLEi0YFKdW-eCy6X0CATq9=s176-c-k-c0x00ffffff-no-rj-mo",
+    category: "Basics",
+    views: "2,662,643 views",
+    publishDate: "Dec 16, 2020",
+    subscribers: "3.64M subscribers",
+    trending: false,
+  },
+  {
     _id: "yyv9Y2miV64",
     thumbnail:
       "https://i.ytimg.com/vi/yyv9Y2miV64/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCJFpoHuOp0k_le2WI-SX8qTIhNPA",
@@ -260,6 +191,24 @@ export const videos = [
     publishDate: "Sep 9, 2019",
     subscribers: "4.05M subscribers",
     trending: false,
+  },
+  {
+    _id: "2joA_S92p64",
+    thumbnail:
+      "https://i.ytimg.com/vi/2joA_S92p64/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA59XBgJGNBJfLOIbDpnl6qMcdFxQ",
+    shortTitle: "Gaming PC Parts Explained!",
+    title:
+      "Gaming PC Parts Explained! 😃 A Beginner's Guide To Gaming Computer Components!",
+    description:
+      "Ever Wondered What's In A Gaming PC? Here's PC Centric's complete beginner's guide to what's inside a gaming computer, with all gaming pc components explained!",
+    creator: "PC Centric",
+    creatorThumbnail:
+      "https://yt3.ggpht.com/ytc/AKedOLTCIi-aKJjs3I3IJWnsq-8Y4bDYr-PNVxe__WSmFg=s176-c-k-c0x00ffffff-no-rj-mo",
+    category: "Basics",
+    views: "1,277,942 views",
+    publishDate: "Feb 27, 2020",
+    subscribers: "501K subscribers",
+    trending: true,
   },
   {
     _id: "wEhlKK5qKXo",
@@ -292,6 +241,23 @@ export const videos = [
     views: "18,892 views",
     publishDate: "Sep 14, 2021",
     subscribers: "31.7K subscribers",
+    trending: false,
+  },
+  {
+    _id: "-8LMML_EiMg",
+    thumbnail:
+      "https://i.ytimg.com/vi/-8LMML_EiMg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDY0ZFK66inxjwMLmFCS9Ve8j7apA",
+    shortTitle: "Mistakes that Beginners Make!",
+    title: "Common PC Building Mistakes that Beginners Make!",
+    description:
+      "Here are the most common PC Building mistakes I see when people are building their first PCs! Don't let these happen to you! ",
+    creator: "JayzTwoCents",
+    creatorThumbnail:
+      "https://yt3.ggpht.com/EAJTcRmRdv3plIT4zRJlyWRnf4cS_zVt6YVtSZ39hQ4ryApK0ZPLEi0YFKdW-eCy6X0CATq9=s176-c-k-c0x00ffffff-no-rj-mo",
+    category: "Basics",
+    views: "3,084,284 views",
+    publishDate: "Jan 23, 2021",
+    subscribers: "3.64M subscribers",
     trending: false,
   },
   {
@@ -329,6 +295,23 @@ export const videos = [
     trending: false,
   },
   {
+    _id: "PXaLc9AYIcg",
+    thumbnail:
+      "https://i.ytimg.com/vi/PXaLc9AYIcg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDgCcZjgAKhZbOBqgIQz72DOiucGA",
+    shortTitle: "How To Build A PC",
+    title: "How To Build A PC - Step by Step (Full Build Guide)",
+    description:
+      "A fully in-depth step by step PC build guide. Includes everything from installation of parts, installing Windows OS, installing drivers, XMP Profile setup, Windows settings + More!",
+    creator: "TechSource",
+    creatorThumbnail:
+      "https://yt3.ggpht.com/ytc/AKedOLRDCJXNd_hrpel3uDPX7Ojdi3v28Rk6wHCZvhs3=s48-c-k-c0x00ffffff-no-rj",
+    category: "Basics",
+    views: "7,537,846 views",
+    publishDate: "Apr 9, 2021",
+    subscribers: "3.35M subscribers",
+    trending: true,
+  },
+  {
     _id: "nepL38tba-I",
     thumbnail:
       "https://i.ytimg.com/vi/nepL38tba-I/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDiOTyIxwNnqbqXiTz3bP1Bu3w8Jw",
@@ -343,6 +326,23 @@ export const videos = [
     views: "435,404 views",
     publishDate: "Jan 11, 2022",
     subscribers: "7.01M subscribers",
+    trending: false,
+  },
+  {
+    _id: "NYcZmwnWkdI",
+    thumbnail:
+      "https://i.ytimg.com/vi/NYcZmwnWkdI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC4rVW-ukVmDoaPSSi_uYABmTgjZQ",
+    shortTitle: "Save Money on a PC BUILD",
+    title: "How to Save Money on a PC BUILD | Buy PC Parts for Cheap [HINDI]",
+    description:
+      "In today's video, I will share some with you guys so that you can some money on your next gaming PC Build.",
+    creator: "PC Wale",
+    creatorThumbnail:
+      "https://yt3.ggpht.com/ytc/AKedOLT-bXiIX0ppL3kWkWZACLFM6DxgxDxuRLiZixG_mg=s48-c-k-c0x00ffffff-no-rj",
+    category: "Basics",
+    views: "26,152 views",
+    publishDate: "Jan 11, 2021",
+    subscribers: "54.9K subscribers",
     trending: false,
   },
 ];
