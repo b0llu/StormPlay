@@ -18,11 +18,15 @@ export const VideoListing = ({ category }) => {
     <Loader />
   ) : (
     <div className="video-listing-container">
-      {searchFilteredVideos
-        .filter((video) => (category ? video.category === category : video))
-        .map((video) => {
-          return <VideoCard key={video._id} video={video} />;
-        })}
+      {searchFilteredVideos.length < 1 ? (
+        <h1 className="empty-state">Searched Video is not Available</h1>
+      ) : (
+        searchFilteredVideos
+          .filter((video) => (category ? video.category === category : video))
+          .map((video) => {
+            return <VideoCard key={video._id} video={video} />;
+          })
+      )}
     </div>
   );
 };

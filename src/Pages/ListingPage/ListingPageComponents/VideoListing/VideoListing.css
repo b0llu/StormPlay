@@ -5,3 +5,10 @@
   justify-content: center;
   margin-bottom: 5rem;
 }
+
+.empty-state {
+  font-size: 2rem;
+  color: var(--content-color);
+  font-weight: 500;
+  margin-top: 5rem;
+}
